@@ -62,30 +62,35 @@ export default function Navbar() {
     }, [open]);
 
   return (
-      <header className="w-[100%] flex justify-center h-16">
-        <div className="w-[100%] fixed top-0 bg-background z-50 ">
-          <div className="flex w-full md:max-w-5xl mx-auto px-4 justify-between items-center h-16">
+      <header className="w-[100%] flex justify-center h-10">
+        <div className="w-[100%] fixed top-5 bg-background z-50 ">
+          <div className="flex w-full md:max-w-5xl mx-auto px-4 justify-center gap-3 border items-center h-10">
             {/* Logo + Brand */}
             <div className="flex items-center gap-4">
               <Link href={"/"}>
-                <motion.div>
-                  <motion.img
+                <div>
+                  <h4 className="text-xs">
+
+                  Emmanuel Oguntolu
+                  </h4>
+                  {/* <motion.img
                   variants={logoVariants} 
                   initial="initial"
                   animate="animate"
                   // exit="exit"
-                  className="" height={70} width={90} src={"/assets/spaces-gold.svg"} alt="logo"/>
-                </motion.div>
+                  className="" height={70} width={90} src={"/assets/spaces-gold.svg"} alt="logo"/> */}
+                </div>
               </Link>
           
               {/* Desktop Nav */}
               <nav className="hidden md:flex items-center gap-4">
                 <ul className="flex items-end gap-4 text-[#F3F4F6] text-sm">
-                  <a href="#movies"><li className="hover:text-primary mt-1">Movies</li></a>
-                  <a href="#scenes"><li className="hover:text-primary">Scenes</li></a>
-                  <a href="#casts"><li className="hover:text-primary">Casts</li></a>
-                  <a href="#pricing"><li className="hover:text-primary">Pricing</li></a>
-                  {/* <a href="#"><li className="hover:text-primary">Contact</li></a> */}
+                  <a href="#movies"><li className="hover:text-primary mt-1">Home</li></a>
+                  <a href="#scenes"><li className="hover:text-primary">Services</li></a>
+                  <a href="#casts"><li className="hover:text-primary">About</li></a>
+                  <a href="#pricing"><li className="hover:text-primary">Works</li></a>
+                  <a href="#pricing"><li className="hover:text-primary">Posts</li></a>
+                  <a href="#"><li className="hover:text-primary">Contact</li></a>
                 </ul>
               </nav>
             </div>
