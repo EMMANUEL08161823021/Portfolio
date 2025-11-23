@@ -17,7 +17,7 @@ const Home = () => {
 					</div>
 					<div>
 						<h1>
-						<span>Software Engineer</span> <br class="d-block d-lg-none"/> from Lagos, Nigeria.
+						<span>Software Engineer</span> from Lagos, Nigeria.
 						</h1>
 						<p>
 						Skilled in building interactive, high-performance web applications with seamless user experiences, responsive design, and engaging animations across devices and browsers using full stack technologies.
