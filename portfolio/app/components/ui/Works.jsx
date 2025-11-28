@@ -4,10 +4,9 @@ const Works = () => {
      return (
           <section className='border'>
                <br/>
-               
                <br/>
                <br/>
-               <div>
+               <div className='w-full md:max-w-5xl mx-auto'>
                     <div>
                          <div>
                               <h6>WORKS</h6>

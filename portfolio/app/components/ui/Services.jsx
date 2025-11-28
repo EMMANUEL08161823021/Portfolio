@@ -6,7 +6,7 @@ const Services = () => {
             <br/>
             <br/>
             <br/>
-            <div>
+            <div className='w-full md:max-w-5xl mx-auto'>
                 <div>
                     <div>
                         <div>

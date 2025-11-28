@@ -62,14 +62,14 @@ export default function Navbar() {
     }, [open]);
 
   return (
-      <header className="w-[100%] flex justify-center h-10">
+      <header className="w-full flex justify-center h-10">
         <div className="w-[100%] fixed top-5 bg-background z-50 ">
           <div className="flex w-full md:max-w-5xl mx-auto px-4 justify-center gap-3 border items-center h-10">
             {/* Logo + Brand */}
             <div className="flex items-center gap-4">
               <Link href={"/"}>
                 <div>
-                  <h4 className="text-xs">
+                  <h4>
 
                   Emmanuel Oguntolu
                   </h4>

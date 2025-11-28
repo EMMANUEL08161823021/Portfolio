@@ -6,7 +6,7 @@ const About = () => {
                <br/>
                <br/>
                <br/>
-               <div>
+               <div className='w-full md:max-w-5xl mx-auto'>
                     <div>
                          <div>
                               <h6>ABOUT ME</h6>
