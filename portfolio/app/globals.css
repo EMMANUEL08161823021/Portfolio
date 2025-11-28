@@ -1,27 +1,65 @@
+/* Tailwind entrypoints (required) */
 @import "tailwindcss";
 
 
+
+/* Original custom properties (keep your values) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  /* ... keep all your --* variables here ... */
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-@theme inline {
+/* Dark mode overrides */
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  /* ... keep the rest ... */
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* If you want both sets of variable names (your components might read --color-*) */
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  /* ... add any mapping you need ... */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Base layer (Tailwind-compatible) */
+@layer base {
+  /* safer universal rules */
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Use CSS variables directly — prefer this to @apply for color tokens */
+  body {
+    /* background: var(--color-background); */
+    color: var(--color-foreground);
+    font-family: var(--font-sans, ui-sans-serif, system-ui);
+  }
+
+  /* If you want a consistent border color and ring fallback for elements,
+     set them in CSS rather than trying to @apply non-existent utilities: */
+  :where([data-outline]) { /* example selector for elements that need ring/outline */
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
 }

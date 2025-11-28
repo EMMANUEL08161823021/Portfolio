@@ -1,21 +1,5 @@
-import About from "./components/ui/About";
-import Home from "./components/ui/Home";
-import Services from "./components/ui/Services";
-import Works from "./components/ui/Works";
-import Footer from "./constants/Footer";
-import Navbar from "./constants/Navbar";
-
+import { redirect } from "next/navigation";
 
 export default function App() {
-  return (
-    <>
-      <Navbar/>
-      <Home/>
-      <Services/>
-      <About/>
-      <Works/>
-      <Footer/>
-  
-    </>
-  );
+  redirect("/home");
 }

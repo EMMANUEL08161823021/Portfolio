@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { CTAButton } from "../components/ui/button";
+import { CTAButton } from "../home/ui/button";
 import Link from "next/link";
 
 const exampleSuggestions = [
@@ -63,8 +63,8 @@ export default function Navbar() {
 
   return (
       <header className="w-full flex justify-center h-10">
-        <div className="w-[100%] fixed top-5 bg-background z-50 ">
-          <div className="flex w-full md:max-w-5xl mx-auto px-4 justify-center gap-3 border items-center h-10">
+        <div className="w-[100%] fixed z-50 ">
+          <div className="flex w-full md:max-w-5xl p-2 bg-black mx-auto px-4 justify-center gap-3 border items-center h-10">
             {/* Logo + Brand */}
             <div className="flex items-center gap-4">
               <Link href={"/"}>
