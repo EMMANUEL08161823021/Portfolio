@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const Hero = () => {
      return (
@@ -14,15 +15,12 @@ const Hero = () => {
 					transition={{ duration: 0.6 }}
 					className="space-y-6"
 					>
-						<div className='border'>
-							<img src="#" alt='PP'/>
-						</div>
+						<Avatar>
+						<AvatarImage src="https://github.com/shadcn.png" />
+						<AvatarFallback>EO</AvatarFallback>
+						</Avatar>
 						<h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
-						I'm a{' '}
-						<span className="">
-							Software Engineer
-						</span>{' '}
-						from Lagos, Nigeria.
+						I'm a Software Engineer from Lagos, Nigeria.
 						</h1>
 
 						<p className="text-gray-600 dark:text-gray-300">

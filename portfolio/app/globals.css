@@ -1,8 +1,6 @@
 /* Tailwind entrypoints (required) */
 @import "tailwindcss";
 
-
-
 /* Original custom properties (keep your values) */
 :root {
   --radius: 0.625rem;
@@ -51,7 +49,7 @@
 
   /* Use CSS variables directly — prefer this to @apply for color tokens */
   body {
-    /* background: var(--color-background); */
+    background: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans, ui-sans-serif, system-ui);
   }
