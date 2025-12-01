@@ -1,4 +1,28 @@
-import React from 'react'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const works = [
+     {
+          id: 1,
+          projectName: "SPACES",
+          projectDesc: " SPACES is a feature film — a visually ambitious story about creators and an infinite canvas that changes their lives. It blends spectacle with intimate character moments for a cinematic experience.",
+          projectLink: "https://spaces-space.vercel.app",
+          projectStacks: ["NextJs", "TailwindCss", "Framer-Motion"]
+     },
+     {
+          id: 2,
+          projectName: "SaaSto",
+          projectDesc: "SaaSto – A collaboration time tracking that you need",
+          projectLink: "https://saasto-nine.vercel.app",
+          projectStacks: ["NextJs", "TailwindCss", "Framer-Motion"]
+     },
+     {
+          id: 3,
+          projectName: "NeuroWallet",
+          projectDesc: "NeuroWallet – A project that allows secure, accessible, and inclusive digital wallet for physical disabilities.",
+          projectLink: "https://neurowallet.vercel.app",
+          projectStacks: ["NextJs", "TailwindCss", "Framer-Motion"]
+     },
+]
 
 const Works = () => {
      return (
@@ -240,6 +264,17 @@ const Works = () => {
                          </div>
 
                     
+                    </div>
+               </div>
+               <div>
+                    <div className='Tab'>
+                    {
+                         works.map((project)=> (
+                              <div>
+                                   <p>{project.projectName}</p>
+                              </div>
+                         ))
+                    }
                     </div>
                </div>
                <br/>
