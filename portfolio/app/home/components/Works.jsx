@@ -1,4 +1,6 @@
+"use client";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useState } from "react";
 
 const works = [
      {
@@ -25,6 +27,7 @@ const works = [
 ]
 
 const Works = () => {
+     const [selectedIndex, setSelectedIndex] = useState(works.length ? 0 : -1);
      return (
           <section className='border'>
                <br/>
@@ -266,15 +269,50 @@ const Works = () => {
                     
                     </div>
                </div>
-               <div>
-                    <div className='Tab'>
-                    {
-                         works.map((project)=> (
-                              <div>
-                                   <p>{project.projectName}</p>
-                              </div>
-                         ))
-                    }
+               <div className="flex gap-3 border justify-center w-full">
+                    {/* Left: project list */}
+                    <div className="border h-[40vh] w-[40%] text-center flex flex-col gap-2 overflow-auto p-3">
+                         <p className="font-bold">My Recent Projects</p>
+                         {works.length === 0 ? (
+                              <p className="text-center text-sm">No projects yet</p>
+                         ) : (
+                              works.map((project, i) => (
+                              <button
+                              key={project.id ?? i}
+                              onClick={() => setSelectedIndex(i)}
+                              className={
+                                   "w-min text-center mx-auto p-2 mb-2 rounded-md transition " +
+                                   (selectedIndex === i
+                                   ? "bg-indigo-50 dark:bg-indigo-900 ring-2 ring-indigo-300"
+                                   : "hover:bg-gray-50 dark:hover:bg-gray-800")
+                              }
+                              aria-pressed={selectedIndex === i}
+                              >
+                              <p className="font-medium">{project.projectName}</p>
+                              </button>
+                              ))
+                         )}
+                    </div>
+
+                    {/* Right: selected project description */}
+                    <div className="border h-[40vh] w-[40%] p-4 overflow-auto flex items-start">
+                    {selectedIndex === -1 || !works[selectedIndex] ? (
+                         <p className="text-sm text-center w-full">Select a project to see details</p>
+                    ) : (
+                         <div>
+                         <h3 className="text-lg font-semibold">
+                         {works[selectedIndex].projectName}
+                         </h3>
+                         <p className="mt-2 text-sm">{works[selectedIndex].projectDesc}</p>
+
+                         {/* optional: other metadata */}
+                         {works[selectedIndex].projectStacks && (
+                         <p className="mt-3 text-gray-500">
+                              <strong>Tech Stacks:</strong> {works[selectedIndex].projectStacks.join(", ")}
+                         </p>
+                         )}
+                         </div>
+                    )}
                     </div>
                </div>
                <br/>
