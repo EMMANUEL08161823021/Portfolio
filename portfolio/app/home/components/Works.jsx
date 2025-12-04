@@ -24,6 +24,13 @@ const works = [
           projectLink: "https://neurowallet.vercel.app",
           projectStacks: ["NextJs", "TailwindCss", "Framer-Motion"]
      },
+     {
+          id: 4,
+          projectName: "LYNKK",
+          projectDesc: "I built LYNKK, a website focused on real-time crypto transactions and containing articles about cryptocurrency.",
+          projectLink: "https://lynkk-app.vercel.app",
+          projectStacks: ["NextJs", "TailwindCss", "Framer-Motion"]
+     },
 ]
 
 const Works = () => {
@@ -296,23 +303,23 @@ const Works = () => {
 
                     {/* Right: selected project description */}
                     <div className="border h-[40vh] w-[40%] p-4 overflow-auto flex items-start">
-                    {selectedIndex === -1 || !works[selectedIndex] ? (
-                         <p className="text-sm text-center w-full">Select a project to see details</p>
-                    ) : (
-                         <div>
-                         <h3 className="text-lg font-semibold">
-                         {works[selectedIndex].projectName}
-                         </h3>
-                         <p className="mt-2 text-sm">{works[selectedIndex].projectDesc}</p>
+                         {selectedIndex === -1 || !works[selectedIndex] ? (
+                              <p className="text-sm text-center w-full">Select a project to see details</p>
+                         ) : (
+                              <div>
+                              <h3 className="text-lg font-semibold">
+                              {works[selectedIndex].projectName}
+                              </h3>
+                              <p className="mt-2 text-sm">{works[selectedIndex].projectDesc}</p>
 
-                         {/* optional: other metadata */}
-                         {works[selectedIndex].projectStacks && (
-                         <p className="mt-3 text-gray-500">
-                              <strong>Tech Stacks:</strong> {works[selectedIndex].projectStacks.join(", ")}
-                         </p>
+                              {/* optional: other metadata */}
+                              {works[selectedIndex].projectStacks && (
+                              <p className="mt-3 text-gray-500">
+                                   <strong>Tech Stacks:</strong> {works[selectedIndex].projectStacks.join(", ")}
+                              </p>
+                              )}
+                              </div>
                          )}
-                         </div>
-                    )}
                     </div>
                </div>
                <br/>
