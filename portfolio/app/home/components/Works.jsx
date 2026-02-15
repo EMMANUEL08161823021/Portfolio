@@ -119,7 +119,7 @@ const Works = () => {
                               <br/>
 
                               <div >
-                              <img alt="Lynkk Preview"/>
+                              <img alt="Lynkk Prev"/>
                               </div>
                          </div>
                          </div>
