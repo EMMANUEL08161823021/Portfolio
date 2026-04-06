@@ -1,103 +1,212 @@
-'use client';
-
-import React from 'react';
+"use client"
 
 const SERVICE_DATA = [
   {
-    id: 'web-app',
-    title: 'Web Application Development',
+    id: "web-app",
+    title: "Web App Development",
     description:
-      'I design and build responsive web applications that are fast, accessible and scalable — from marketing sites to admin dashboards.',
-    href: '#',
+      "Fast, accessible, and scalable web applications — from marketing sites to complex admin dashboards. Built with Next.js and optimised for performance from day one.",
+    tags: ["Next.js", "React", "TypeScript"],
     icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M7 3v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M17 3v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
       </svg>
     ),
+    accent: "from-indigo-500/10 to-indigo-500/0",
+    iconBg: "bg-indigo-500/10",
+    iconColor: "text-indigo-400",
+    borderHover: "hover:border-indigo-500/40",
+    tagColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
   },
   {
-    id: 'auth',
-    title: 'Authentication & Security',
+    id: "auth",
+    title: "Auth & Security",
     description:
-      'Implement robust authentication (JWT, OAuth) and role-based access control to protect user data and secure your app.',
-    href: '#',
+      "Robust authentication flows using JWT, OAuth 2.0, and session management. Role-based access control and security hardening so your users and data stay safe.",
+    tags: ["JWT", "OAuth", "RBAC"],
     icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M12 2l6 4v4c0 5-3 9-6 11-3-2-6-6-6-11V6l6-4z" stroke="currentColor" strokeWidth="1.5" />
-        <circle cx="12" cy="11" r="2" stroke="currentColor" strokeWidth="1.5" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2l6 4v4c0 5-3 9-6 11-3-2-6-6-6-11V6l6-4z" />
+        <circle cx="12" cy="11" r="2" />
       </svg>
     ),
+    accent: "from-emerald-500/10 to-emerald-500/0",
+    iconBg: "bg-emerald-500/10",
+    iconColor: "text-emerald-400",
+    borderHover: "hover:border-emerald-500/40",
+    tagColor: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20",
   },
   {
-    id: 'payments',
-    title: 'Payment Integration & E-commerce',
+    id: "payments",
+    title: "Payments & E-commerce",
     description:
-      'Integrate Stripe, Paystack or other gateways and build a smooth checkout experience that increases conversions.',
-    href: '#',
+      "End-to-end payment integration with Stripe, Paystack, or Flutterwave. Smooth checkout flows, subscription billing, and webhook handling built to convert.",
+    tags: ["Stripe", "Paystack", "Webhooks"],
     icon: (
-      <svg className="h-8 w-8" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M7 11h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" />
+        <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+        <line x1="12" y1="12" x2="12" y2="16" />
+        <line x1="10" y1="14" x2="14" y2="14" />
       </svg>
     ),
+    accent: "from-violet-500/10 to-violet-500/0",
+    iconBg: "bg-violet-500/10",
+    iconColor: "text-violet-400",
+    borderHover: "hover:border-violet-500/40",
+    tagColor: "bg-violet-500/10 text-violet-400 border-violet-500/20",
   },
-];
+  {
+    id: "ui",
+    title: "UI / UX Engineering",
+    description:
+      "Pixel-perfect, accessible interfaces translated directly from Figma. Micro-interactions, animation, and component systems that make your product feel premium.",
+    tags: ["Figma", "Tailwind", "Framer Motion"],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 12h8M12 8v8" />
+      </svg>
+    ),
+    accent: "from-pink-500/10 to-pink-500/0",
+    iconBg: "bg-pink-500/10",
+    iconColor: "text-pink-400",
+    borderHover: "hover:border-pink-500/40",
+    tagColor: "bg-pink-500/10 text-pink-400 border-pink-500/20",
+  },
+  {
+    id: "api",
+    title: "API & Backend Development",
+    description:
+      "RESTful and GraphQL APIs built with Node.js and Express. Database design with MongoDB or PostgreSQL, third-party integrations, and clean server-side architecture.",
+    tags: ["Node.js", "REST", "MongoDB"],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+    accent: "from-amber-500/10 to-amber-500/0",
+    iconBg: "bg-amber-500/10",
+    iconColor: "text-amber-400",
+    borderHover: "hover:border-amber-500/40",
+    tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+  },
+  {
+    id: "perf",
+    title: "Performance & Optimisation",
+    description:
+      "Audits, Core Web Vitals fixes, bundle splitting, image optimisation, and caching strategies. I turn sluggish apps into fast, high-scoring products.",
+    tags: ["Lighthouse", "Web Vitals", "CDN"],
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+      </svg>
+    ),
+    accent: "from-cyan-500/10 to-cyan-500/0",
+    iconBg: "bg-cyan-500/10",
+    iconColor: "text-cyan-400",
+    borderHover: "hover:border-cyan-500/40",
+    tagColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+  },
+]
+
+const ArrowIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 17L17 7M17 7H7M17 7v10" />
+  </svg>
+)
 
 export default function Services() {
   return (
-    <section className="bg-gray-50 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10">
-          <p className="text-sm font-medium text-indigo-600 tracking-wider">SERVICES</p>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Services that I can provide
-          </h2>
-          <p className="mt-2 text-sm text-slate-600 max-w-2xl mx-auto">
-            I build user-focused web experiences — from secure auth to payment flows and full web apps.
-          </p>
-        </header>
+    <section id="services" className="bg-gray-950 py-24 px-6">
+      <div className="max-w-5xl mx-auto">
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Header */}
+        <div className="mb-16 space-y-3">
+          <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
+            Services
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-50 leading-tight">
+            What I can build
+            <span className="text-indigo-400"> for you</span>
+          </h2>
+          <p className="text-[15px] text-gray-500 leading-relaxed max-w-lg">
+            End-to-end engineering — from a single feature to a full product. Here's what I bring to the table.
+          </p>
+        </div>
+
+        {/* Cards grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {SERVICE_DATA.map((s) => (
             <article
               key={s.id}
-              className="relative group bg-white rounded-xl shadow-sm hover:shadow-lg transition p-6 flex flex-col"
-              aria-labelledby={`${s.id}-title`}
+              className={`group relative flex flex-col rounded-2xl border border-gray-800 bg-gray-900/40 p-6 transition-all duration-300 ${s.borderHover} hover:bg-gray-900/80`}
             >
-              <div className="flex items-center gap-4">
-                <div className="flex-none rounded-md bg-indigo-50 text-indigo-600 p-3">
-                  {s.icon}
-                </div>
-                <div className="flex-1">
-                  <h3 id={`${s.id}-title`} className="text-lg font-semibold text-slate-900">
-                    {s.title}
-                  </h3>
-                </div>
+              {/* Top gradient wash on hover */}
+              <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 rounded-t-2xl bg-gradient-to-b ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+
+              {/* Icon */}
+              <div className={`relative mb-5 w-11 h-11 rounded-xl flex items-center justify-center ${s.iconBg} ${s.iconColor} transition-transform duration-300 group-hover:scale-110`}>
+                {s.icon}
               </div>
 
-              <p className="mt-4 text-sm text-slate-600 flex-1">{s.description}</p>
+              {/* Title */}
+              <h3 className="relative text-[15px] font-bold text-gray-100 mb-2 leading-snug">
+                {s.title}
+              </h3>
 
-              <div className="mt-6">
-                <a
-                  href={s.href}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700"
-                  aria-label={`View details for ${s.title}`}
-                >
-                  <span>View</span>
-                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
+              {/* Description */}
+              <p className="relative text-[13px] text-gray-500 leading-[1.85] flex-1 mb-5">
+                {s.description}
+              </p>
+
+              {/* Tags */}
+              <div className="relative flex flex-wrap gap-1.5 mb-5">
+                {s.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className={`text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md border ${s.tagColor}`}
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
-              {/* decorative stripe */}
-              <div className="absolute -bottom-1 left-6 right-6 h-0.5 bg-gradient-to-r from-transparent via-indigo-200 to-transparent opacity-0 group-hover:opacity-100 transition" />
+              {/* CTA */}
+              <a
+                href="#contact"
+                className="relative inline-flex items-center gap-1.5 text-[12px] font-semibold text-gray-600 hover:text-gray-200 transition-colors duration-200 w-fit"
+              >
+                Get a quote <ArrowIcon />
+              </a>
+
+              {/* Bottom border glow */}
+              <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-300 ${s.iconColor}`} />
             </article>
           ))}
         </div>
+
+        {/* Bottom CTA strip */}
+        <div className="mt-12 rounded-2xl border border-gray-800 bg-gray-900/40 px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="text-[15px] font-bold text-gray-100 mb-1">
+              Got something specific in mind?
+            </p>
+            <p className="text-[13px] text-gray-500">
+              I'm open to custom projects, consulting, and long-term contracts.
+            </p>
+          </div>
+          <a
+            href="#contact"
+            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-colors active:scale-[0.98]"
+          >
+            Let's talk <ArrowIcon />
+          </a>
+        </div>
+
       </div>
     </section>
-  );
+  )
 }

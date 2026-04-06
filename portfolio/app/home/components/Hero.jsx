@@ -1,21 +1,13 @@
 "use client"
-import React from 'react'
-import { motion } from 'framer-motion'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import React, { useEffect, useState } from 'react'
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
-})
+const ROLES = ["Software Engineer", "Frontend Dev", "UI Craftsman", "Full-Stack Builder"]
 
 const STATS = [
-  { value: "3+", label: "Years exp." },
+  { value: "3+", label: "Yrs exp" },
   { value: "20+", label: "Projects" },
   { value: "12+", label: "Clients" },
 ]
-
-const STACK = ["React", "Next.js", "TypeScript", "Node.js", "Tailwind"]
 
 const SOCIALS = [
   {
@@ -48,162 +40,373 @@ const SOCIALS = [
 ]
 
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen bg-white dark:bg-gray-950 overflow-hidden flex items-center">
+  const [roleIdx, setRoleIdx] = useState(0)
+  const [fadeRole, setFadeRole] = useState(true)
+  const [visible, setVisible] = useState(false)
 
-      {/* Subtle background grid */}
+  useEffect(() => {
+    const t = setTimeout(() => setVisible(true), 80)
+    return () => clearTimeout(t)
+  }, [])
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setFadeRole(false)
+      setTimeout(() => {
+        setRoleIdx(i => (i + 1) % ROLES.length)
+        setFadeRole(true)
+      }, 300)
+    }, 2600)
+    return () => clearInterval(t)
+  }, [])
+
+  return (
+    <section
+      className="relative min-h-screen bg-black overflow-hidden flex items-center"
+      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        @keyframes heroIn {
+          from { opacity: 0; transform: translateY(28px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse-ring {
+          0%   { transform: scale(1);   opacity: 0.6; }
+          100% { transform: scale(1.8); opacity: 0; }
+        }
+        @keyframes floatY {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-8px); }
+        }
+        @keyframes scrollBounce {
+          0%, 100% { transform: translateY(0); opacity: 1; }
+          50%       { transform: translateY(6px); opacity: 0.4; }
+        }
+
+        .hero-item { opacity: 0; animation: heroIn 0.7s ease forwards; }
+        .hero-item:nth-child(1) { animation-delay: 0.05s; }
+        .hero-item:nth-child(2) { animation-delay: 0.15s; }
+        .hero-item:nth-child(3) { animation-delay: 0.25s; }
+        .hero-item:nth-child(4) { animation-delay: 0.35s; }
+        .hero-item:nth-child(5) { animation-delay: 0.45s; }
+        .hero-item:nth-child(6) { animation-delay: 0.55s; }
+        .hero-item:nth-child(7) { animation-delay: 0.65s; }
+
+        .float-card { animation: floatY 4s ease-in-out infinite; }
+
+        .cta-primary {
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 12px 24px; border-radius: 10px;
+          font-size: 14px; font-weight: 600;
+          background: #4f46e5; color: #fff;
+          border: none; cursor: pointer; text-decoration: none;
+          transition: background 0.2s, transform 0.15s;
+        }
+        .cta-primary:hover { background: #4338ca; transform: translateY(-1px); }
+        .cta-primary:active { transform: scale(0.97); }
+
+        .cta-secondary {
+          display: inline-flex; align-items: center; gap: 8px;
+          padding: 12px 24px; border-radius: 10px;
+          font-size: 14px; font-weight: 600;
+          background: transparent; color: #d1d5db;
+          border: 1px solid #374151; cursor: pointer; text-decoration: none;
+          transition: background 0.2s, border-color 0.2s, transform 0.15s;
+        }
+        .cta-secondary:hover { background: #111827; border-color: #6b7280; transform: translateY(-1px); }
+        .cta-secondary:active { transform: scale(0.97); }
+
+        .social-btn {
+          padding: 8px; border-radius: 8px; color: #6b7280;
+          transition: color 0.15s, background 0.15s;
+          display: flex;
+        }
+        .social-btn:hover { color: #e5e7eb; background: #1f2937; }
+
+        .stack-pill {
+          font-size: 11px; font-weight: 500; letter-spacing: 0.04em;
+          padding: 4px 12px; border-radius: 999px;
+          background: #111827; border: 1px solid #1f2937;
+          color: #9ca3af; transition: border-color 0.15s, color 0.15s;
+        }
+        .stack-pill:hover { border-color: #4f46e5; color: #a5b4fc; }
+
+        .stat-card {
+          display: flex; flex-direction: column; align-items: center;
+          gap: 2px; padding: 12px 16px; border-radius: 12px;
+          background: #0f1117; border: 1px solid #1f2937;
+        }
+
+        .scroll-hint {
+          animation: scrollBounce 1.8s ease-in-out infinite;
+        }
+      `}</style>
+
+      {/* Radial glow background */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03] dark:opacity-[0.05]"
+        className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage:
-            "linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          background:
+            "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(79,70,229,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(16,185,129,0.06) 0%, transparent 60%)",
+        }}
+      />
+
+      {/* Dot grid */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
         }}
       />
 
       <div className="relative w-full max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
 
-        {/* ── LEFT: Text ── */}
-        <div className="space-y-8">
+        {/* ── LEFT ── */}
+        <div className="space-y-7">
 
           {/* Status badge */}
-          <motion.div {...fadeUp(0)}>
-            <span className="inline-flex items-center gap-2 text-xs font-medium tracking-wide px-3 py-1.5 rounded-full border border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-800 dark:bg-emerald-950 dark:text-emerald-400">
+          <div className="hero-item">
+            <span
+              className="inline-flex items-center gap-2.5 text-xs font-medium px-3.5 py-1.5 rounded-full"
+              style={{
+                background: "rgba(16,185,129,0.08)",
+                border: "1px solid rgba(16,185,129,0.25)",
+                color: "#34d399",
+              }}
+            >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                <span
+                  className="absolute inline-flex h-full w-full rounded-full bg-emerald-400"
+                  style={{ animation: "pulse-ring 1.4s ease-out infinite" }}
+                />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
               </span>
-              Open to work
+              Available for new projects
             </span>
-          </motion.div>
+          </div>
+
+          {/* Role cycler */}
+          <div className="hero-item">
+            <p
+              style={{
+                fontSize: 12,
+                letterSpacing: "0.18em",
+                textTransform: "uppercase",
+                color: "#4f46e5",
+                fontWeight: 600,
+                opacity: fadeRole ? 1 : 0,
+                transition: "opacity 0.3s ease",
+              }}
+            >
+              {ROLES[roleIdx]} — Lagos, Nigeria
+            </p>
+          </div>
 
           {/* Heading */}
-          <motion.div {...fadeUp(0.08)} className="space-y-2">
-            <p className="text-sm font-medium tracking-widest text-gray-400 uppercase">
-              Software Engineer — Lagos, Nigeria
-            </p>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-[1.1] tracking-tight">
-              Building things{" "}
-              <span className="relative inline-block">
-                <span className="relative z-10 text-indigo-600 dark:text-indigo-400">
-                  for the web
-                </span>
-                <span
-                  className="absolute bottom-1 left-0 right-0 h-3 bg-indigo-100 dark:bg-indigo-900/40 -z-0 rounded"
-                  aria-hidden
-                />
+          <div className="hero-item space-y-2">
+            <h1
+              style={{
+                fontSize: "clamp(2.6rem, 5.5vw, 4rem)",
+                fontWeight: 800,
+                lineHeight: 1.08,
+                letterSpacing: "-0.03em",
+                color: "#f9fafb",
+              }}
+            >
+              I build digital{" "}
+              <span
+                style={{
+                  position: "relative",
+                  display: "inline-block",
+                  color: "#818cf8",
+                }}
+              >
+                experiences
+                <svg
+                  style={{ position: "absolute", bottom: -4, left: 0, width: "100%" }}
+                  viewBox="0 0 200 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 6 C50 2, 150 2, 198 6"
+                    stroke="#4f46e5"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    fill="none"
+                  />
+                </svg>
               </span>
-              {" "}that people love.
+              {" "}that ship.
             </h1>
-          </motion.div>
+          </div>
 
           {/* Bio */}
-          <motion.p
-            {...fadeUp(0.16)}
-            className="text-base text-gray-500 dark:text-gray-400 leading-relaxed max-w-md"
+          <p
+            className="hero-item"
+            style={{
+              fontSize: 16,
+              color: "#9ca3af",
+              lineHeight: 1.8,
+              maxWidth: 440,
+              fontWeight: 400,
+            }}
           >
-            I craft fast, accessible, and elegant digital experiences — from pixel-perfect UIs to robust backend systems. I care deeply about the details that make software feel great.
-          </motion.p>
-
-          {/* Tech stack */}
-          <motion.div {...fadeUp(0.22)} className="flex flex-wrap gap-2">
-            {STACK.map((tech) => (
-              <span
-                key={tech}
-                className="text-xs font-medium px-3 py-1 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700"
-              >
-                {tech}
-              </span>
-            ))}
-          </motion.div>
+            Softwares are engineered end to end according to your taste.
+          </p>
 
           {/* CTAs */}
-          <motion.div {...fadeUp(0.28)} className="flex flex-wrap gap-3"
-            
-              href="#projects"
-          //     className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-all hover:shadow-lg hover:shadow-indigo-200 dark:hover:shadow-indigo-900 active:scale-[0.98]"
-            >
-              Explore my work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="hero-item flex flex-wrap gap-3">
+            <a href="#projects" className="cta-primary">
+              See my work
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            <a
-            
-              href="/cv.pdf"
-              download
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-all active:scale-[0.98]"
-            >
+            </a>
+            <a href="/cv.pdf" download className="cta-secondary">
               Download CV
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
               </svg>
             </a>
-          </motion.div>
+          </div>
 
-          {/* Socials */}
-          <motion.div {...fadeUp(0.34)} className="flex items-center gap-1">
-            {SOCIALS.map(({ label, href, icon }) => (
-              <a
-                key={label}
-                href={href}
-                aria-label={label}
-                target="_blank"
-                rel="noreferrer"
-                className="p-2 rounded-lg text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all"
-              >
-                {icon}
-              </a>
-            ))}
-          </motion.div>
+          {/* Socials + stats */}
+          <div className="hero-item flex items-center gap-4 flex-wrap">
+            <div className="flex items-center gap-1">
+              {SOCIALS.map(({ label, href, icon }) => (
+                <a key={label} href={href} aria-label={label} target="_blank" rel="noreferrer" className="social-btn">
+                  {icon}
+                </a>
+              ))}
+            </div>
+            <div style={{ width: 1, height: 24, background: "#1f2937" }} />
+            <div className="flex items-center gap-3">
+              {STATS.map(({ value, label }) => (
+                <div key={label} className="stat-card">
+                  <span style={{ fontSize: 18, fontWeight: 800, color: "#f9fafb", lineHeight: 1 }}>{value}</span>
+                  <span style={{ fontSize: 10, color: "#6b7280", letterSpacing: "0.06em" }}>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* ── RIGHT: Avatar + Stats ── */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-col items-center gap-8"
+        {/* ── RIGHT ── */}
+        <div
+          className="hero-item flex flex-col items-center gap-6"
+          style={{ animationDelay: "0.2s" }}
         >
-          {/* Avatar frame */}
-          <div className="relative">
-            {/* Decorative ring */}
-            <div className="absolute -inset-3 rounded-full border-2 border-dashed border-indigo-200 dark:border-indigo-800 animate-[spin_20s_linear_infinite]" />
-            <div className="absolute -inset-6 rounded-full border border-gray-100 dark:border-gray-800" />
+          {/* Avatar */}
+          <div className="relative float-card">
+            {/* Outer rings */}
+            <div
+              className="absolute rounded-full"
+              style={{
+                inset: -20,
+                border: "1px solid rgba(79,70,229,0.15)",
+              }}
+            />
+            <div
+              className="absolute rounded-full"
+              style={{
+                inset: -36,
+                border: "1px dashed rgba(79,70,229,0.1)",
+              }}
+            />
 
-            <Avatar className="w-48 h-48 ring-4 ring-white dark:ring-gray-950 shadow-xl">
-              <AvatarImage src="https://github.com/shadcn.png" alt="Profile photo" />
-              <AvatarFallback className="text-4xl font-bold bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300">
-                EO
-              </AvatarFallback>
-            </Avatar>
+            {/* Avatar */}
+            <div
+              style={{
+                width: 300,
+                height: 300,
+                borderRadius: "50%",
+                overflow: "hidden",
+                border: "3px solid #1f2937",
+                outline: "1px solid rgba(79,70,229,0.4)",
+                outlineOffset: 4,
+              }}
+            >
+              <img
+                src="https://github.com/shadcn.png"
+                alt="Profile"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                onError={(e) => {
+                  const t = e.currentTarget
+                  t.style.display = "none"
+                  const parent = t.parentElement
+                  if (parent) {
+                    parent.style.display = "flex"
+                    parent.style.alignItems = "center"
+                    parent.style.justifyContent = "center"
+                    parent.style.background = "#1e1b4b"
+                    parent.style.fontSize = "3rem"
+                    parent.style.fontWeight = "800"
+                    parent.style.color = "#818cf8"
+                    parent.textContent = "EO"
+                  }
+                }}
+              />
+            </div>
 
-            {/* Floating badge */}
-            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-semibold px-3 py-1 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-sm text-gray-700 dark:text-gray-300">
-              Lagos 🇳🇬
+            {/* Floating badge — bottom */}
+            <div
+              className="absolute"
+              style={{
+                bottom: -14,
+                left: "50%",
+                transform: "translateX(-50%)",
+                whiteSpace: "nowrap",
+                fontSize: 11,
+                fontWeight: 600,
+                padding: "4px 12px",
+                borderRadius: 999,
+                background: "#0f1117",
+                border: "1px solid #1f2937",
+                color: "#d1d5db",
+              }}
+            >
+              Lagos, Nigeria 🇳🇬
+            </div>
+
+            {/* Floating tag — top right */}
+            <div
+              className="absolute"
+              style={{
+                top: -10,
+                right: -50,
+                fontSize: 10,
+                fontWeight: 700,
+                padding: "4px 10px",
+                borderRadius: 6,
+                background: "rgba(79,70,229,0.15)",
+                border: "1px solid rgba(79,70,229,0.3)",
+                color: "#a5b4fc",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+              }}
+            >
+              Full-Stack
             </div>
           </div>
 
-          {/* Stats row */}
-          <div className="grid grid-cols-3 gap-4 w-full max-w-xs">
-            {STATS.map(({ value, label }, i) => (
-              <motion.div
-                key={label}
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                className="flex flex-col items-center gap-0.5 p-3 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800"
-              >
-                <span className="text-2xl font-bold text-gray-900 dark:text-white tracking-tight">
-                  {value}
-                </span>
-                <span className="text-xs text-gray-400 dark:text-gray-500 text-center leading-tight">
-                  {label}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+        </div>
+      </div>
 
+      {/* Scroll hint */}
+      <div
+        className="absolute bottom-8 left-1/2 scroll-hint"
+        style={{ transform: "translateX(-50%)", display: "flex", flexDirection: "column", alignItems: "center", gap: 6 }}
+      >
+        <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#374151" }}>
+          scroll
+        </span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#374151" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 5v14M5 12l7 7 7-7" />
+        </svg>
       </div>
     </section>
   )
