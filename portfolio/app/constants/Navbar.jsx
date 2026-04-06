@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
         <header>
             <div className="border h-full w-full flex justify-center">
-                <div className="flex w-full md:max-w-5xl bg-black py-4 fixed mx-auto px-2           justify-center gap-3 border items-center h-10">
+                <div className="flex w-full md:max-w-5xl bg-white text-black py-4 fixed mx-auto px-2           justify-center gap-3 border items-center h-10">
                     {/* Logo + Brand */}
                     <div className="flex items-center gap-4">
                         <Link href={"/"}>
