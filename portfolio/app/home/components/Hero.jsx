@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
+import Me from "../../../public/me.png"
 
 const ROLES = ["Software Engineer", "Frontend Dev", "UI Craftsman", "Full-Stack Builder"]
 
@@ -152,9 +153,6 @@ const Hero = () => {
         {/* ── RIGHT ── */}
         <div className="hero-item flex flex-col items-center gap-6" style={{ animationDelay: "0.2s" }}>
           <div className="relative float-card">
-            <div className="absolute rounded-full" style={{ inset: -20, border: "1px solid rgba(79,70,229,0.15)" }} />
-            <div className="absolute rounded-full" style={{ inset: -36, border: "1px dashed rgba(79,70,229,0.1)" }} />
-
             <div
               style={{
                 width: 300, height: 300,
@@ -166,11 +164,17 @@ const Hero = () => {
               }}
             >
               <img
-                src="https://github.com/shadcn.png"
+                src="/me.png"
                 alt="Profile"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </div>
+
+            {/* Outer rings */}
+            <div className="absolute rounded-full" style={{ inset: -20, border: "1px solid rgba(79,70,229,0.15)" }} />
+            <div className="absolute rounded-full" style={{ inset: -36, border: "1px dashed rgba(79,70,229,0.1)" }} />
+
+            {/* Avatar — inside float-card */}
 
             {/* Lagos badge */}
             <div
@@ -191,6 +195,7 @@ const Hero = () => {
             >
               Full-Stack
             </div>
+
           </div>
         </div>
       </div>
