@@ -1,5 +1,5 @@
 "use client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+// import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
 
 const works = [
@@ -103,7 +103,7 @@ const Works = () => {
                               onClick={() => setActive(i)}
                               className="text-left transition-all duration-200 leading-tight py-1"
                               style={{
-                                   fontFamily: "Georgia, serif",
+                                   fontFamily: "Montserrat, serif",
                                    fontSize: active === i ? "2rem" : "1.85rem",
                                    fontWeight: active === i ? "600" : "300",
                                    color: active === i ? "#1a1a18" : "#b5b2ab",

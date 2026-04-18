@@ -1,6 +1,39 @@
 /* Tailwind entrypoints (required) */
 @import "tailwindcss";
 
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/static/Montserrat-Light.ttf');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/static/Montserrat-Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/static/Montserrat-Medium.ttf');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/static/Montserrat-Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 /* Original custom properties (keep your values) */
 :root {
   --radius: 0.625rem;
@@ -40,24 +73,3 @@
   /* ... add any mapping you need ... */
 }
 
-/* Base layer (Tailwind-compatible) */
-@layer base {
-  /* safer universal rules */
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-  /* Use CSS variables directly — prefer this to @apply for color tokens */
-  body {
-    background: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-sans, ui-sans-serif, system-ui);
-  }
-
-  /* If you want a consistent border color and ring fallback for elements,
-     set them in CSS rather than trying to @apply non-existent utilities: */
-  :where([data-outline]) { /* example selector for elements that need ring/outline */
-    outline: 2px solid var(--color-ring);
-    outline-offset: 2px;
-  }
-}
