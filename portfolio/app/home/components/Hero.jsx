@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Me from "../../../public/me.png"
 
 const ROLES = ["Software Engineer", "Frontend Dev", "UI Craftsman", "Full-Stack Builder"]
 
@@ -154,7 +153,7 @@ const Hero = () => {
               }}
             >
               <img
-                src="/me.png"
+                src="/images/me.png"
                 alt="Profile"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

@@ -164,10 +164,10 @@ export default function Experience() {
                           )}
                           </p>
                           <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-gray-900 border border-gray-800 text-black whitespace-nowrap">
+                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-gray-800 text-black whitespace-nowrap">
                           {job.period}
                           </span>
-                          <ChevronIcon open={isOpen} />
+                          {/* <ChevronIcon open={isOpen} /> */}
                           </div>
                       </div>
 
