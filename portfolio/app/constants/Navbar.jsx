@@ -24,10 +24,40 @@ const MenuIcon = () => (
   </svg>
 )
 
+function NavLink({ href, label, active, onClick }) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`relative text-[13px] font-medium tracking-wide py-1 transition-colors duration-150 group
+        ${active === href ? "text-white" : "text-gray-400 hover:text-gray-50"}`}
+    >
+      {label}
+      <span className={`absolute -bottom-0.5 left-0 h-[1.5px] rounded-full bg-indigo-500 transition-all duration-200
+        ${active === href ? "w-full" : "w-0 group-hover:w-full"}`}
+      />
+    </a>
+  )
+}
+
+function MobileLink({ href, label, active, onClick }) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`block text-[15px] font-medium py-2.5 border-b border-gray-800 tracking-wide transition-all duration-150
+        hover:text-gray-50 hover:pl-1.5
+        ${active === href ? "text-gray-50" : "text-gray-400"}`}
+    >
+      {label}
+    </a>
+  )
+}
+
 export default function Navbar() {
-  const [open, setOpen]         = useState(false)
+  const [open,     setOpen]     = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [active, setActive]     = useState("#home")
+  const [active,   setActive]   = useState("#home")
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -35,7 +65,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : ""
     return () => { document.body.style.overflow = "" }
@@ -43,180 +72,49 @@ export default function Navbar() {
 
   return (
     <>
-      <style>{`
-        @keyframes slideIn {
-          from { transform: translateX(100%); opacity: 0; }
-          to   { transform: translateX(0);    opacity: 1; }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
-        .sidebar-panel  { animation: slideIn 0.28s cubic-bezier(0.22,1,0.36,1) forwards; }
-        .sidebar-overlay { animation: fadeIn 0.2s ease forwards; }
+      {/* ── Header ── */}
+      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        scrolled
+          ? "bg-[#03070f]/85 backdrop-blur-[14px] border-b border-white/[0.06]"
+          : "bg-transparent border-b border-transparent"
+      }`}>
+        <div className="max-w-6xl mx-auto px-6 h-[60px] flex items-center justify-between gap-6">
 
-        .nav-link {
-          position: relative;
-          font-size: 13px;
-          font-weight: 500;
-          letter-spacing: 0.03em;
-          color: #9ca3af;
-          text-decoration: none;
-          padding: 4px 0;
-          transition: color 0.15s;
-        }
-        .nav-link::after {
-          content: '';
-          position: absolute;
-          bottom: -2px; left: 0;
-          width: 0; height: 1.5px;
-          background: #4f46e5;
-          transition: width 0.2s ease;
-          border-radius: 2px;
-        }
-        .nav-link:hover          { color: #f9fafb; }
-        .nav-link:hover::after   { width: 100%; }
-        .nav-link.active         { color: #f9fafb; }
-        .nav-link.active::after  { width: 100%; }
-
-        .mobile-link {
-          display: block;
-          font-size: 15px;
-          font-weight: 500;
-          color: #9ca3af;
-          text-decoration: none;
-          padding: 10px 0;
-          border-bottom: 0.5px solid #1f2937;
-          transition: color 0.15s, padding-left 0.15s;
-          letter-spacing: 0.02em;
-        }
-        .mobile-link:hover { color: #f9fafb; padding-left: 6px; }
-        .mobile-link.active { color: #f9fafb; }
-      `}</style>
-
-      <header
-        style={{
-          position: "fixed",
-          top: 0, left: 0, right: 0,
-          zIndex: 100,
-          transition: "background 0.3s, border-color 0.3s, backdrop-filter 0.3s",
-          background: scrolled ? "rgba(3,7,18,0.85)" : "transparent",
-          backdropFilter: scrolled ? "blur(14px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
-          borderBottom: scrolled ? "0.5px solid rgba(255,255,255,0.06)" : "0.5px solid transparent",
-        }}
-      >
-        <div
-          style={{
-            maxWidth: 1152,
-            margin: "0 auto",
-            padding: "0 24px",
-            height: 60,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: 24,
-          }}
-        >
           {/* Logo */}
-          <Link
-            href="/"
-            style={{
-              textDecoration: "none",
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              flexShrink: 0,
-            }}
-          >
-            {/* Monogram mark */}
-            <div
-              style={{
-                width: 32, height: 32,
-                borderRadius: 8,
-                background: "linear-gradient(135deg, #4f46e5, #7c3aed)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: 13, fontWeight: 800, color: "#fff",
-                letterSpacing: "-0.02em",
-                flexShrink: 0,
-              }}
-            >
+          <Link href="/" className="flex items-center gap-2 flex-shrink-0 no-underline">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[13px] font-extrabold text-white tracking-tight flex-shrink-0">
               EO
             </div>
-            <span
-              style={{
-                fontSize: 14,
-                fontWeight: 700,
-                color: "#f9fafb",
-                letterSpacing: "-0.01em",
-                whiteSpace: "nowrap",
-              }}
-            >
+            <span className="text-sm font-bold text-gray-50 tracking-tight whitespace-nowrap">
               Emmanuel Oguntolu
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav
-            className="hidden md:flex"
-            style={{ alignItems: "center", gap: 28 }}
-          >
+          <nav className="hidden md:flex items-center gap-7">
             {NAV_LINKS.map(({ label, href }) => (
-              <a
+              <NavLink
                 key={href}
                 href={href}
-                className={`nav-link${active === href ? " active" : ""}`}
+                label={label}
+                active={active}
                 onClick={() => setActive(href)}
-              >
-                {label}
-              </a>
+              />
             ))}
           </nav>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex" style={{ alignItems: "center", gap: 10, flexShrink: 0 }}>
+          {/* Desktop CTAs */}
+          <div className="hidden md:flex items-center gap-2.5 flex-shrink-0">
             <a
               href="/cv.pdf"
               download
-              style={{
-                fontSize: 12,
-                fontWeight: 600,
-                letterSpacing: "0.04em",
-                padding: "7px 14px",
-                borderRadius: 8,
-                border: "1px solid #1f2937",
-                color: "#d1d5db",
-                textDecoration: "none",
-                transition: "background 0.15s, border-color 0.15s",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.background = "#1f2937"
-                e.currentTarget.style.borderColor = "#374151"
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.background = "transparent"
-                e.currentTarget.style.borderColor = "#1f2937"
-              }}
+              className="text-xs font-semibold tracking-wide px-3.5 py-1.5 rounded-lg border border-gray-800 text-gray-300 hover:bg-gray-800 hover:border-gray-700 transition-all duration-150 whitespace-nowrap"
             >
               Resume
             </a>
             <a
               href="#contact"
-              style={{
-                fontSize: 12,
-                fontWeight: 600,
-                letterSpacing: "0.04em",
-                padding: "7px 16px",
-                borderRadius: 8,
-                background: "#4f46e5",
-                color: "#fff",
-                textDecoration: "none",
-                transition: "background 0.15s",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#4338ca" }}
-              onMouseLeave={e => { e.currentTarget.style.background = "#4f46e5" }}
+              className="text-xs font-semibold tracking-wide px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors duration-150 whitespace-nowrap"
             >
               Hire me
             </a>
@@ -228,162 +126,95 @@ export default function Navbar() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             onClick={() => setOpen(s => !s)}
-            className="md:hidden"
-            style={{
-              background: "none",
-              border: "1px solid #1f2937",
-              borderRadius: 8,
-              padding: "5px 7px",
-              color: "#9ca3af",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "color 0.15s, border-color 0.15s",
-              flexShrink: 0,
-            }}
+            className="md:hidden flex items-center justify-center p-1.5 rounded-lg border border-gray-800 text-gray-400 hover:text-gray-200 hover:border-gray-700 transition-all duration-150 flex-shrink-0"
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </button>
         </div>
       </header>
 
-      {/* Mobile overlay */}
+      {/* ── Mobile overlay ── */}
       {open && (
         <div
-          className="sidebar-overlay md:hidden"
           onClick={() => setOpen(false)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 110,
-            background: "rgba(0,0,0,0.6)",
-            backdropFilter: "blur(4px)",
-            WebkitBackdropFilter: "blur(4px)",
-          }}
+          className="md:hidden fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm animate-[fadeIn_0.2s_ease_forwards]"
         />
       )}
 
-      {/* Mobile sidebar */}
+      {/* ── Mobile sidebar ── */}
       {open && (
         <aside
           id="mobile-menu"
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
-          className="sidebar-panel md:hidden"
-          style={{
-            position: "fixed",
-            top: 0, right: 0, bottom: 0,
-            zIndex: 120,
-            width: "72%",
-            maxWidth: 320,
-            background: "#080c14",
-            borderLeft: "0.5px solid #1f2937",
-            display: "flex",
-            flexDirection: "column",
-          }}
+          className="md:hidden fixed top-0 right-0 bottom-0 z-[120] w-[72%] max-w-[320px] bg-[#080c14] border-l border-gray-800 flex flex-col animate-[slideIn_0.28s_cubic-bezier(0.22,1,0.36,1)_forwards]"
         >
           {/* Sidebar header */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              padding: "16px 20px",
-              borderBottom: "0.5px solid #1f2937",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <div
-                style={{
-                  width: 28, height: 28,
-                  borderRadius: 7,
-                  background: "linear-gradient(135deg, #4f46e5, #7c3aed)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: 11, fontWeight: 800, color: "#fff",
-                }}
-              >
+          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-800">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[11px] font-extrabold text-white">
                 EO
               </div>
-              <span style={{ fontSize: 13, fontWeight: 700, color: "#f9fafb" }}>
-                Emmanuel
-              </span>
+              <span className="text-[13px] font-bold text-gray-50">Emmanuel</span>
             </div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              style={{
-                background: "#0f1117",
-                border: "1px solid #1f2937",
-                borderRadius: 7,
-                padding: "5px 7px",
-                color: "#6b7280",
-                cursor: "pointer",
-                display: "flex",
-              }}
+              className="flex items-center justify-center p-1.5 rounded-[7px] bg-[#0f1117] border border-gray-800 text-black hover:text-gray-300 transition-colors"
             >
               <CloseIcon />
             </button>
           </div>
 
           {/* Nav links */}
-          <nav style={{ padding: "8px 20px", flex: 1, overflowY: "auto" }}>
+          <nav className="flex-1 overflow-y-auto px-5 pt-2">
             {NAV_LINKS.map(({ label, href }) => (
-              <a
+              <MobileLink
                 key={href}
                 href={href}
-                className={`mobile-link${active === href ? " active" : ""}`}
+                label={label}
+                active={active}
                 onClick={() => { setActive(href); setOpen(false) }}
-              >
-                {label}
-              </a>
+              />
             ))}
           </nav>
 
           {/* Sidebar CTAs */}
-          <div style={{ padding: 20, borderTop: "0.5px solid #1f2937", display: "flex", flexDirection: "column", gap: 10 }}>
+          <div className="px-5 py-5 border-t border-gray-800 flex flex-col gap-2.5">
             <a
               href="/cv.pdf"
               download
-              style={{
-                display: "block",
-                textAlign: "center",
-                fontSize: 13,
-                fontWeight: 600,
-                padding: "10px 0",
-                borderRadius: 9,
-                border: "1px solid #1f2937",
-                color: "#d1d5db",
-                textDecoration: "none",
-              }}
+              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] border border-gray-800 text-gray-300 hover:bg-gray-800 transition-colors"
             >
               Download Resume
             </a>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              style={{
-                display: "block",
-                textAlign: "center",
-                fontSize: 13,
-                fontWeight: 600,
-                padding: "10px 0",
-                borderRadius: 9,
-                background: "#4f46e5",
-                color: "#fff",
-                textDecoration: "none",
-              }}
+              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] bg-indigo-600 hover:bg-indigo-700 text-white transition-colors"
             >
               Hire me
             </a>
           </div>
 
-          <div style={{ padding: "12px 20px", fontSize: 11, color: "#374151", textAlign: "center" }}>
+          <div className="px-5 py-3 text-[11px] text-gray-700 text-center">
             © {new Date().getFullYear()} Emmanuel Oguntolu
           </div>
         </aside>
       )}
+
+      {/* Keyframes for animations */}
+      <style>{`
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to   { transform: translateX(0);    opacity: 1; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+      `}</style>
     </>
   )
 }

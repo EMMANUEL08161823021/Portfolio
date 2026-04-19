@@ -122,7 +122,7 @@ const ArrowIcon = () => (
 export default function Services() {
   return (
     <section id="services" className="border border-black text-black py-24 px-6">
-      <div className="max-w-6xl border mx-auto">
+      <div className="max-w-5xl border mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
@@ -133,7 +133,7 @@ export default function Services() {
             What I can build
             <span className="text-indigo-400"> for you</span>
           </h2>
-          <p className="text-[15px] text-gray-500 leading-relaxed max-w-lg">
+          <p className="text-[15px] text-black leading-relaxed max-w-lg">
             End-to-end engineering — from a single feature to a full product. Here's what I bring to the table.
           </p>
         </div>
@@ -154,12 +154,12 @@ export default function Services() {
               </div>
 
               {/* Title */}
-              <h3 className="relative text-[15px] font-bold text-gray-100 mb-2 leading-snug">
+              <h3 className="relative text-[15px] font-bold text-black mb-2 leading-snug">
                 {s.title}
               </h3>
 
               {/* Description */}
-              <p className="relative text-[13px] text-gray-500 leading-[1.85] flex-1 mb-5">
+              <p className="relative text-[13px] text-black leading-[1.85] flex-1 mb-5">
                 {s.description}
               </p>
             </article>

@@ -34,8 +34,8 @@ const SOCIALS = [
 const INFO = [
   {
     label: "Email",
-    value: "hello@emmanuel.dev",
-    href: "mailto:hello@emmanuel.dev",
+    value: "emmanueloguntolu48@gmail.com",
+    href: "mailto:emmanueloguntolu48@gmail.com",
     icon: (
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -109,18 +109,18 @@ export default function Contact() {
         textarea.field { resize: none; }
       `}</style>
 
-      <div className="max-w-6xl border mx-auto">
+      <div className="max-w-5xl border mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
           <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
             Contact
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-50 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight">
             Let's build something
             <span className="text-indigo-400"> together</span>
           </h2>
-          <p className="text-[15px] text-gray-500 leading-relaxed max-w-md">
+          <p className="text-[15px] text-black leading-relaxed max-w-md">
             Have a project in mind or just want to say hi? My inbox is always open.
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function Contact() {
                 const inner = (
                   <div
                     key={label}
-                    className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-gray-800 bg-gray-900/50"
+                    className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-gray-800"
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${highlight ? "bg-emerald-500/10 text-emerald-400" : "bg-gray-800 text-gray-400"}`}>
                       {icon}
@@ -180,28 +180,11 @@ export default function Contact() {
                     aria-label={label}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-lg flex items-center justify-center text-gray-500 border border-gray-800 bg-gray-900/50 hover:text-indigo-400 hover:border-indigo-700 transition-all"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center text-black border border-gray-800 hover:text-indigo-400 hover:border-indigo-700 transition-all"
                   >
                     {icon}
                   </a>
                 ))}
-              </div>
-            </div>
-
-            {/* Response time card */}
-            <div className="mt-auto rounded-xl border border-gray-800 bg-gray-900/40 p-4">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-[13px] font-semibold text-gray-200 mb-0.5">Quick responder</p>
-                  <p className="text-[12px] text-gray-500 leading-relaxed">
-                    I typically reply within 24 hours. For urgent work, mention it in the subject.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -210,13 +193,13 @@ export default function Contact() {
           <div className="md:col-span-3">
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-gray-800 bg-gray-900/40 p-7 flex flex-col gap-4"
+              className="rounded-2xl border border-gray-800 p-7 flex flex-col gap-4"
             >
 
               {/* Name + Email */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[11px] text-gray-500 uppercase tracking-widest font-medium">
+                  <label className="text-[11px] text-black uppercase tracking-widest font-medium">
                     Name
                   </label>
                   <input
@@ -229,7 +212,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[11px] text-gray-500 uppercase tracking-widest font-medium">
+                  <label className="text-[11px] text-black uppercase tracking-widest font-medium">
                     Email
                   </label>
                   <input
@@ -246,7 +229,7 @@ export default function Contact() {
 
               {/* Subject */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-[11px] text-gray-500 uppercase tracking-widest font-medium">
+                <label className="text-[11px] text-black uppercase tracking-widest font-medium">
                   Subject
                 </label>
                 <input
@@ -261,7 +244,7 @@ export default function Contact() {
 
               {/* Message */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-[11px] text-gray-500 uppercase tracking-widest font-medium">
+                <label className="text-[11px] text-black uppercase tracking-widest font-medium">
                   Message
                 </label>
                 <textarea

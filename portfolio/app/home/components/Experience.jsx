@@ -23,8 +23,8 @@ const JOBS = [
   {
     id: 2,
     title: "Full-Stack Developer",
-    company: "LYNKK",
-    initials: "LK",
+    company: "Skyestudio",
+    initials: "SK",
     logoBg: "bg-green-950",
     logoText: "text-green-400",
     type: "Contract · Remote",
@@ -95,7 +95,7 @@ export default function Experience() {
   const [active, setActive] = useState(1)
 
   return (
-    <section id="experience" className="border border-black max-w-6xl mx-auto px-4 min-h-screen">
+    <section id="experience" className="border border-black max-w-5xl mx-auto px-4 min-h-screen">
           <br/>
           <br/>
           <br/>
@@ -164,7 +164,7 @@ export default function Experience() {
                           )}
                           </p>
                           <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-gray-900 border border-gray-800 text-gray-500 whitespace-nowrap">
+                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-gray-900 border border-gray-800 text-black whitespace-nowrap">
                           {job.period}
                           </span>
                           <ChevronIcon open={isOpen} />
@@ -178,13 +178,13 @@ export default function Experience() {
                           >
                           {job.initials}
                           </div>
-                          <span className="text-[13px] text-gray-500 font-medium">{job.company}</span>
+                          <span className="text-[13px] text-black font-medium">{job.company}</span>
                           <span className="text-[11px] text-gray-700">· {job.type}</span>
                       </div>
                       </button>
 
                       {/* Expandable card */}
-                      {isOpen && (
+                      {/* {isOpen && (
                       <div className="exp-open mt-4">
                           <div className="border border-gray-800 rounded-xl p-5">
 
@@ -209,7 +209,7 @@ export default function Experience() {
                           {job.stack.map((s) => (
                                 <span
                                 key={s}
-                                className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-gray-500"
+                                className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-black"
                                 >
                                 {s}
                                 </span>
@@ -217,7 +217,7 @@ export default function Experience() {
                           </div>
                           </div>
                       </div>
-                      )}
+                      )} */}
                 </div>
                 )
                 })}

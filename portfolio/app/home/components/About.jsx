@@ -26,7 +26,7 @@ const FACTS = [
 export default function About() {
   return (
     <section id="about" className="border border-black py-24 px-6">
-      <div className="max-w-6xl border mx-auto">
+      <div className="max-w-5xl border mx-auto">
 
         {/* ── Two-column layout ── */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
@@ -37,22 +37,18 @@ export default function About() {
               <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
                 About me
               </p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight">
-                Who I am &amp;{" "}
-                <span className="text-indigo-400">what I do</span>
-              </h2>
             </div>
 
             <p className="text-[15px] text-black leading-[1.9]">
               I'm a{" "}
-              <span className="text-gray-200 font-semibold">Software Engineer</span>{" "}
+              <span className="text-black font-semibold">Software Engineer</span>{" "}
               based in Lagos, Nigeria — passionate about turning complex problems
               into clean, user-friendly digital products. I bridge the gap between
               design and engineering, crafting experiences that feel as good as
               they work.
             </p>
 
-            <p className="text-[15px] text-gray-500 leading-[1.9]">
+            <p className="text-[15px] text-black leading-[1.9]">
               When I'm not shipping code, I'm exploring new tools, contributing to
               open source, or mentoring up-and-coming developers in the Lagos tech
               community.
@@ -77,11 +73,11 @@ export default function About() {
           </div>
 
           {/* RIGHT — Tech stack */}
-          <div className="space-y-6">
+          <div className="space-y-8">
 
             {/* Stack label */}
-            <div>
-              <p className="text-[11px] tracking-[0.18em] uppercase text-gray-600 font-semibold mb-3">
+            <div className="space-y-8">
+              <p className="text-[11px] tracking-[0.22em] uppercase text-gray-600 font-semibold mb-3">
                 Tech stack
               </p>
               <div className="flex flex-wrap gap-2">

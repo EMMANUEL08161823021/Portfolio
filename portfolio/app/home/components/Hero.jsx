@@ -104,10 +104,10 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative w-full max-w-6xl mx-auto border py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative w-full max-w-5xl mx-auto border border-black px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
 
         {/* ── LEFT ── */}
-        <div className="space-y-7">
+        <div className="space-y-7 border border-black">
           {/* Heading */}
           <div className="hero-item">
             <h1 className="text-3xl sm:text-6xl font-extrabold leading-[1.08] tracking-tight text-black">
@@ -134,16 +134,6 @@ const Hero = () => {
               See my work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a
-              href="/cv.pdf"
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold border border-gray-700 text-gray-300 hover:bg-gray-800 hover:border-gray-600 transition-all active:scale-[0.97]"
-            >
-              Download CV
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
               </svg>
             </a>
           </div>

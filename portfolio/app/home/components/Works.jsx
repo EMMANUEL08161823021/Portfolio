@@ -80,7 +80,7 @@ const Works = () => {
                <br/>
                <br/>
                <br/>
-               <div className="w-full max-w-6xl mx-auto px-6">
+               <div className="w-full max-w-5xl mx-auto px-6">
 
                     {/* Section label */}
                     <p className="text-[10px] tracking-[0.25em] text-gray-400 uppercase mb-10">
@@ -96,14 +96,14 @@ const Works = () => {
                          style={{ width: "38%", background: "#f0ede8", flexShrink: 0 }}
                          >
                          {/* Project name list */}
-                         <div className="flex flex-col justify-center flex-1 px-10 py-12 gap-1">
+                         <div className="flex flex-col items-center justify-center flex-1 px-10 py-12 gap-1">
                          {works.map((project, i) => (
                               <button
                               key={project.id}
                               onClick={() => setActive(i)}
                               className="text-left transition-all duration-200 leading-tight py-1"
                               style={{
-                                   fontFamily: "Montserrat, serif",
+                                   fontfamily: 'Montserrat',
                                    fontSize: active === i ? "2rem" : "1.85rem",
                                    fontWeight: active === i ? "600" : "300",
                                    color: active === i ? "#1a1a18" : "#b5b2ab",
@@ -130,7 +130,7 @@ const Works = () => {
                               onClick={() => setActive(i)}
                               className="transition-all duration-150"
                               style={{
-                                   fontFamily: "inherit",
+                                   fontfamily: 'Montserrat',
                                    fontSize: "9px",
                                    letterSpacing: "0.16em",
                                    textTransform: "uppercase",
@@ -160,7 +160,7 @@ const Works = () => {
                          <div
                               className="absolute inset-0 flex items-center justify-center select-none pointer-events-none"
                               style={{
-                              fontFamily: "Georgia, serif",
+                              fontfamily: 'Montserrat',
                               fontSize: "clamp(6rem, 18vw, 14rem)",
                               fontWeight: "700",
                               color: "rgba(255,255,255,0.18)",
