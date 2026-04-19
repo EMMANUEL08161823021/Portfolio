@@ -3,7 +3,7 @@
 const SERVICE_DATA = [
   {
     id: "web-app",
-    title: "Web App Development",
+    title: "UI/ UX Design",
     description:
       "Fast, accessible, and scalable web applications — from marketing sites to complex admin dashboards. Built with Next.js and optimised for performance from day one.",
     tags: ["Next.js", "React", "TypeScript"],
@@ -21,7 +21,7 @@ const SERVICE_DATA = [
   },
   {
     id: "auth",
-    title: "Auth & Security",
+    title: "Front-end Development",
     description:
       "Robust authentication flows using JWT, OAuth 2.0, and session management. Role-based access control and security hardening so your users and data stay safe.",
     tags: ["JWT", "OAuth", "RBAC"],
@@ -59,7 +59,7 @@ const SERVICE_DATA = [
   },
   {
     id: "ui",
-    title: "UI / UX Engineering",
+    title: "Fullstack Development",
     description:
       "Pixel-perfect, accessible interfaces translated directly from Figma. Micro-interactions, animation, and component systems that make your product feel premium.",
     tags: ["Figma", "Tailwind", "Framer Motion"],
@@ -94,21 +94,22 @@ const SERVICE_DATA = [
     tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
   },
   {
-    id: "perf",
-    title: "Performance & Optimisation",
+    id: "api",
+    title: "API & Backend Development",
     description:
-      "Audits, Core Web Vitals fixes, bundle splitting, image optimisation, and caching strategies. I turn sluggish apps into fast, high-scoring products.",
-    tags: ["Lighthouse", "Web Vitals", "CDN"],
+      "RESTful and GraphQL APIs built with Node.js and Express. Database design with MongoDB or PostgreSQL, third-party integrations, and clean server-side architecture.",
+    tags: ["Node.js", "REST", "MongoDB"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
       </svg>
     ),
-    accent: "from-cyan-500/10 to-cyan-500/0",
-    iconBg: "bg-cyan-500/10",
-    iconColor: "text-cyan-400",
-    borderHover: "hover:border-cyan-500/40",
-    tagColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
+    accent: "from-amber-500/10 to-amber-500/0",
+    iconBg: "bg-amber-500/10",
+    iconColor: "text-amber-400",
+    borderHover: "hover:border-amber-500/40",
+    tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
   },
 ]
 
@@ -120,15 +121,15 @@ const ArrowIcon = () => (
 
 export default function Services() {
   return (
-    <section id="services" className="bg-gray-950 py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="services" className="border border-black text-black py-24 px-6">
+      <div className="max-w-6xl border mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
           <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
             Services
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-50 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
             What I can build
             <span className="text-indigo-400"> for you</span>
           </h2>
@@ -142,10 +143,10 @@ export default function Services() {
           {SERVICE_DATA.map((s) => (
             <article
               key={s.id}
-              className={`group relative flex flex-col rounded-2xl border border-gray-800 bg-gray-900/40 p-6 transition-all duration-300 ${s.borderHover} hover:bg-gray-900/80`}
+              className={`group relative flex flex-col rounded-2xl border border-black p-6 transition-all duration-300`}
             >
               {/* Top gradient wash on hover */}
-              <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 rounded-t-2xl bg-gradient-to-b ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+              {/* <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 rounded-t-2xl bg-gradient-to-b ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} /> */}
 
               {/* Icon */}
               <div className={`relative mb-5 w-11 h-11 rounded-xl flex items-center justify-center ${s.iconBg} ${s.iconColor} transition-transform duration-300 group-hover:scale-110`}>
@@ -161,49 +162,8 @@ export default function Services() {
               <p className="relative text-[13px] text-gray-500 leading-[1.85] flex-1 mb-5">
                 {s.description}
               </p>
-
-              {/* Tags */}
-              <div className="relative flex flex-wrap gap-1.5 mb-5">
-                {s.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`text-[10px] font-medium tracking-wide px-2 py-0.5 rounded-md border ${s.tagColor}`}
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <a
-                href="#contact"
-                className="relative inline-flex items-center gap-1.5 text-[12px] font-semibold text-gray-600 hover:text-gray-200 transition-colors duration-200 w-fit"
-              >
-                Get a quote <ArrowIcon />
-              </a>
-
-              {/* Bottom border glow */}
-              <div className={`absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-300 ${s.iconColor}`} />
             </article>
           ))}
-        </div>
-
-        {/* Bottom CTA strip */}
-        <div className="mt-12 rounded-2xl border border-gray-800 bg-gray-900/40 px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div>
-            <p className="text-[15px] font-bold text-gray-100 mb-1">
-              Got something specific in mind?
-            </p>
-            <p className="text-[13px] text-gray-500">
-              I'm open to custom projects, consulting, and long-term contracts.
-            </p>
-          </div>
-          <a
-            href="#contact"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-colors active:scale-[0.98]"
-          >
-            Let's talk <ArrowIcon />
-          </a>
         </div>
 
       </div>

@@ -18,15 +18,15 @@ const SKILLS = [
 ]
 
 const FACTS = [
-  { value: "3+",  label: "Years building" },
-  { value: "20+", label: "Projects shipped" },
-  { value: "12+", label: "Happy clients" },
+  { value: "4+",  label: "Years building" },
+  { value: "10+", label: "Projects shipped" },
+  { value: "5+", label: "Happy clients" },
 ]
 
 export default function About() {
   return (
-    <section id="about" className="bg-gray-950 py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="about" className="border border-black py-24 px-6">
+      <div className="max-w-6xl border mx-auto">
 
         {/* ── Two-column layout ── */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
@@ -37,13 +37,13 @@ export default function About() {
               <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
                 About me
               </p>
-              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-50 leading-tight">
+              <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight">
                 Who I am &amp;{" "}
                 <span className="text-indigo-400">what I do</span>
               </h2>
             </div>
 
-            <p className="text-[15px] text-gray-400 leading-[1.9]">
+            <p className="text-[15px] text-black leading-[1.9]">
               I'm a{" "}
               <span className="text-gray-200 font-semibold">Software Engineer</span>{" "}
               based in Lagos, Nigeria — passionate about turning complex problems
@@ -63,12 +63,12 @@ export default function About() {
               {FACTS.map(({ value, label }) => (
                 <div
                   key={label}
-                  className="flex flex-col items-center gap-1 py-4 px-2 rounded-xl bg-gray-900 border border-gray-800"
+                  className="flex flex-col items-center gap-1 py-4 px-2 rounded-xl border border-gray-800"
                 >
-                  <span className="text-2xl font-extrabold text-gray-50 tracking-tight">
+                  <span className="text-2xl font-extrabold text-black tracking-tight">
                     {value}
                   </span>
-                  <span className="text-[11px] text-gray-500 text-center leading-tight">
+                  <span className="text-[11px] text-black text-center leading-tight">
                     {label}
                   </span>
                 </div>
@@ -78,16 +78,6 @@ export default function About() {
 
           {/* RIGHT — Tech stack */}
           <div className="space-y-6">
-
-            {/* Avatar placeholder */}
-            <div className="relative w-full aspect-square max-w-xs mx-auto md:mx-0 rounded-2xl overflow-hidden border border-gray-800 bg-gray-900 flex items-center justify-center">
-              <span className="text-7xl font-black text-gray-800 tracking-tight select-none">
-                EO
-              </span>
-              {/* Corner accent */}
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-emerald-400" />
-              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            </div>
 
             {/* Stack label */}
             <div>
@@ -105,31 +95,6 @@ export default function About() {
                 ))}
               </div>
             </div>
-
-            {/* Currently section */}
-            <div className="rounded-xl bg-gray-900/60 border border-gray-800 p-4 space-y-2">
-              <p className="text-[11px] tracking-[0.16em] uppercase text-gray-600 font-semibold">
-                Currently
-              </p>
-              <div className="flex items-start gap-3">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0" />
-                <p className="text-[13px] text-gray-400 leading-relaxed">
-                  Building at{" "}
-                  <span className="text-gray-200 font-semibold">SkyeStudio</span>{" "}
-                  and taking on freelance projects — open to full-time roles.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="mt-1 w-1.5 h-1.5 rounded-full bg-indigo-500 flex-shrink-0" />
-                <p className="text-[13px] text-gray-400 leading-relaxed">
-                  Exploring{" "}
-                  <span className="text-gray-200 font-semibold">Web3</span> and{" "}
-                  <span className="text-gray-200 font-semibold">AI-powered UIs</span>{" "}
-                  on the side.
-                </p>
-              </div>
-            </div>
-
           </div>
         </div>
       </div>

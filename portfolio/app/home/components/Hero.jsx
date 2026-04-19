@@ -56,7 +56,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden flex items-center font-sans">
+    <section className="relative min-h-screen overflow-hidden flex items-center">
       <style>{`
         @keyframes heroIn {
           from { opacity: 0; transform: translateY(28px); }
@@ -104,13 +104,13 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative w-full max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative w-full max-w-6xl mx-auto border py-24 grid md:grid-cols-2 gap-16 items-center">
 
         {/* ── LEFT ── */}
         <div className="space-y-7">
           {/* Heading */}
           <div className="hero-item">
-            <h1 className="text-3xl sm:text-6xl font-extrabold leading-[1.08] tracking-tight text-gray-50">
+            <h1 className="text-3xl sm:text-6xl font-extrabold leading-[1.08] tracking-tight text-black">
               Hey,{" "}
               I'm Emmanuel
               <span className="relative inline-block text-indigo-400">

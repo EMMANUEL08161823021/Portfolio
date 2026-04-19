@@ -85,7 +85,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="bg-gray-950 py-24 px-6 font-sans">
+    <section id="contact" className="border border-black py-24 px-6">
       <style>{`
         @keyframes slideUp {
           from { opacity: 0; transform: translateY(20px); }
@@ -109,7 +109,7 @@ export default function Contact() {
         textarea.field { resize: none; }
       `}</style>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl border mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
@@ -312,17 +312,7 @@ export default function Contact() {
 
             </form>
           </div>
-        </div>
-
-        {/* Footer strip */}
-        <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[13px] text-gray-600">
-            © {new Date().getFullYear()} Emmanuel Oguntolu. All rights reserved.
-          </p>
-          <p className="text-[13px] text-gray-700">
-            Built with Next.js · Tailwind CSS · Aeonik Pro
-          </p>
-        </div>
+        </div>       
       </div>
     </section>
   )

@@ -4,21 +4,21 @@ import { useState } from "react"
 const JOBS = [
   {
     id: 1,
-    title: "Frontend Engineer",
-    company: "SkyeStudio",
-    initials: "SS",
+    title: "Frontend Developer",
+    company: "Pivetra",
+    initials: "P",
     logoBg: "bg-indigo-950",
     logoText: "text-indigo-300",
-    type: "Full-time · Remote",
-    period: "2024 — Present",
+    type: "Internship · Remote . Germany",
+    period: "Nov 2025 — March 2026",
     current: true,
-    desc: "Leading frontend development for a digital agency serving tech startups and SMBs. Own the component system, performance budget, and client delivery pipeline.",
+    desc: "Pivetra is a customer support platform",
     achievements: [
-      "Reduced page load time by 62% by migrating to Next.js App Router with streaming SSR.",
-      "Built a reusable design system used across 8+ client projects, cutting UI build time in half.",
-      "Mentored 2 junior developers through weekly code reviews and pair programming sessions.",
+      "I migrated the admin UI from Material UI to shadcn/ui, optimizing Next.js rendering and lifecycle methods to significantly reduce bundle weight and improve responsiveness",
+      "I architected a scalable translation module to support multi-language localization (e.g., German, Hindi). Implemented dynamic language switching and context-aware string mapping to ensure a seamless experience for global users.",
+      "Rebuilt complex product flows using react-hook-form and Redux.",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Figma", "Vercel"],
+    stack: ["Next.js", "JavaScript", "Tailwind CSS", "Redux"],
   },
   {
     id: 2,
@@ -39,35 +39,35 @@ const JOBS = [
   },
   {
     id: 3,
-    title: "React Developer",
-    company: "NeuroWallet",
-    initials: "NW",
+    title: "Frontend Engineer",
+    company: "Rootshive Limited",
+    initials: "RL",
     logoBg: "bg-stone-900",
     logoText: "text-stone-400",
-    type: "Freelance",
-    period: "2022 — 2023",
-    desc: "Developed an accessible digital wallet interface for users with physical disabilities. Focused on WCAG 2.1 compliance, keyboard navigation, and voice-first interaction design.",
+    type: "Remote",
+    period: "May 2024 - Jan 2025",
+    desc: "Rootshive is a digital tool that helps people and businesses manage their money better. It's like a personal financial assistant that tracks income, expenses, and spending patterns.",
     achievements: [
-      "Achieved WCAG AA compliance across all user flows with full keyboard operability.",
-      "Implemented voice-command navigation, expanding the accessible user base by an estimated 3×.",
-      "Wrote 85% unit test coverage using Jest and React Testing Library.",
+      "Created visually appealing and responsive user interfaces for Rootshive's landing pages",
+      "Consistently met deadlines while delivering high-quality,  functional, and visually appealing results.",
+      "Utilized Bootstrap for layouts and responsive design, paired with CSS for deep custom styling in PHP environment.",
     ],
-    stack: ["React", "Express.js", "WCAG 2.1", "Jest", "Tailwind CSS"],
+    stack: ["HTML", "Booststrap", "PHP"],
   },
   {
     id: 4,
-    title: "Junior Frontend Developer",
-    company: "SPACES Studio",
-    initials: "SP",
+    title: "Frontend Developer",
+    company: "LeakAlert",
+    initials: "LA",
     logoBg: "bg-violet-950",
     logoText: "text-violet-300",
-    type: "Internship · On-site · Lagos",
-    period: "2021 — 2022",
-    desc: "First professional role — worked on the SPACES film landing page and internal tooling. Learned production-grade React patterns, Git workflow, and Agile collaboration.",
+    type: "Freelance · Remote · Abuja",
+    period: "2024",
+    desc: "A Software That Monitors and Detect Leakages in Pipelines in Realtime and Sends Instant Alerts",
     achievements: [
-      "Shipped the hero section and animations for the SPACES launch campaign.",
-      "Contributed to an internal CMS dashboard, reducing content update time by 40%.",
-      "Participated in daily standups and bi-weekly sprint reviews with a cross-functional team.",
+      "Successfully developed a PWA to monitor pipeline systems in real-time using IoT sensors.",
+      "Implemented real-time updates and anomaly detection with alerts sent via email for critical issues like leaks.",
+      "Integrated React components with backend RESTful APIs for data retrieval and dynamic updates.",
     ],
     stack: ["React", "Framer Motion", "SCSS", "Git"],
   },
@@ -95,7 +95,7 @@ export default function Experience() {
   const [active, setActive] = useState(1)
 
   return (
-    <section id="experience" className="bg-gray-950 max-w-6xl mx-auto px-4 min-h-screen">
+    <section id="experience" className="border border-black max-w-6xl mx-auto px-4 min-h-screen">
           <br/>
           <br/>
           <br/>
@@ -108,116 +108,120 @@ export default function Experience() {
           `}</style>
 
           <div className="w-full mx-auto">
-               {/* Header */}
-               <div className="mb-14">
-                    <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold mb-3">
-                    Experience
-                    </p>
-                    <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-50 leading-tight mb-4">
-                    Where I've worked
-                    </h2>
-                    <p className="text-[15px] text-gray-500 leading-relaxed max-w-sm">
-                    A timeline of roles where I've shipped real products and grown as an engineer.
-                    </p>
-               </div>
+            {/* Header */}
+            <div>
+                <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold mb-3">
+                Experience
+                </p>
+                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight mb-4">
+                Where I've worked
+                </h2>
+                <p className="text-[15px] text-black leading-relaxed max-w-sm">
+                A timeline of roles where I've shipped real products and grown as an engineer.
+                </p>
+            </div>
 
-               <div className="relative">
+            <br/>
+            <br/>
+            <br/>
 
-                    <div className="absolute left-5 top-2 bottom-0 w-px bg-gradient-to-b from-indigo-600 via-gray-800 to-transparent" />
+            <div className="relative">
 
-                    {JOBS.map((job) => {
-                    const isOpen = active === job.id
+                <div className="absolute left-5 top-2 bottom-0 w-px bg-gradient-to-b from-indigo-600 via-gray-800 to-transparent" />
 
-                    return (
-                    <div key={job.id} className="relative pl-14 pb-9 last:pb-0">
+                {JOBS.map((job) => {
+                const isOpen = active === job.id
 
-                         {/* Dot */}
-                         <div
-                         className={`absolute left-3 top-1.5 z-10 w-4 h-4 rounded-full border-2 flex items-center justify-center bg-gray-950 transition-colors duration-200 ${
-                              isOpen ? "border-indigo-500" : "border-gray-700"
-                         }`}
-                         >
-                         <div
-                              className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
-                              isOpen ? "bg-indigo-500" : "bg-gray-700"
-                              }`}
-                         />
-                         </div>
+                return (
+                <div key={job.id} className="relative pl-14 pb-9 last:pb-0">
 
-                         {/* Header button */}
-                         <button
-                         onClick={() => setActive(isOpen ? -1 : job.id)}
-                         className="w-full text-left bg-transparent border-0 p-0 cursor-pointer group"
-                         >
-                         {/* Title + period */}
-                         <div className="flex items-start justify-between gap-3 mb-2">
-                              <p className="text-[15px] font-bold text-gray-50 leading-snug">
-                              {job.title}
-                              {job.current && (
-                              <span className="ml-2 align-middle text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 tracking-wide">
-                                   Current
-                              </span>
-                              )}
-                              </p>
-                              <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                              <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-gray-900 border border-gray-800 text-gray-500 whitespace-nowrap">
-                              {job.period}
-                              </span>
-                              <ChevronIcon open={isOpen} />
-                              </div>
-                         </div>
+                      {/* Dot */}
+                      <div
+                      className={`absolute left-3 top-1.5 z-10 w-4 h-4 rounded-full border-2 flex items-center justify-center bg-gray-950 transition-colors duration-200 ${
+                          isOpen ? "border-indigo-500" : "border-gray-700"
+                      }`}
+                      >
+                      <div
+                          className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
+                          isOpen ? "bg-indigo-500" : "bg-gray-700"
+                          }`}
+                      />
+                      </div>
 
-                         {/* Company */}
-                         <div className="flex items-center gap-2">
-                              <div
-                              className={`w-5 h-5 rounded-[4px] flex items-center justify-center text-[9px] font-extrabold flex-shrink-0 ${job.logoBg} ${job.logoText}`}
-                              >
-                              {job.initials}
-                              </div>
-                              <span className="text-[13px] text-gray-500 font-medium">{job.company}</span>
-                              <span className="text-[11px] text-gray-700">· {job.type}</span>
-                         </div>
-                         </button>
+                      {/* Header button */}
+                      <button
+                      onClick={() => setActive(isOpen ? -1 : job.id)}
+                      className="w-full text-left bg-transparent border-0 p-0 cursor-pointer group"
+                      >
+                      {/* Title + period */}
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                          <p className="text-[15px] font-bold text-black leading-snug">
+                          {job.title}
+                          {job.current && (
+                          <span className="ml-2 align-middle text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/25 text-emerald-400 tracking-wide">
+                                Current
+                          </span>
+                          )}
+                          </p>
+                          <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
+                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-gray-900 border border-gray-800 text-gray-500 whitespace-nowrap">
+                          {job.period}
+                          </span>
+                          <ChevronIcon open={isOpen} />
+                          </div>
+                      </div>
 
-                         {/* Expandable card */}
-                         {isOpen && (
-                         <div className="exp-open mt-4">
-                              <div className="bg-gray-900/60 border border-gray-800 rounded-xl p-5">
+                      {/* Company */}
+                      <div className="flex items-center gap-2">
+                          <div
+                          className={`w-5 h-5 rounded-[4px] flex items-center justify-center text-[9px] font-extrabold flex-shrink-0 ${job.logoBg} ${job.logoText}`}
+                          >
+                          {job.initials}
+                          </div>
+                          <span className="text-[13px] text-gray-500 font-medium">{job.company}</span>
+                          <span className="text-[11px] text-gray-700">· {job.type}</span>
+                      </div>
+                      </button>
 
-                              <p className="text-[13px] text-gray-400 leading-[1.85] mb-4">
-                              {job.desc}
-                              </p>
+                      {/* Expandable card */}
+                      {isOpen && (
+                      <div className="exp-open mt-4">
+                          <div className="border border-gray-800 rounded-xl p-5">
 
-                              <ul className="flex flex-col gap-2 mb-5 list-none p-0 m-0">
-                              {job.achievements.map((a, i) => (
-                                   <li
-                                   key={i}
-                                   className="relative text-[13px] text-gray-400 leading-[1.8] pl-4
-                                        before:content-[''] before:absolute before:left-0 before:top-[9px]
-                                        before:w-1.5 before:h-1.5 before:rounded-full before:bg-indigo-500"
-                                   >
-                                   {a}
-                                   </li>
-                              ))}
-                              </ul>
+                          <p className="text-[13px] text-black leading-[1.85] mb-4">
+                          {job.desc}
+                          </p>
 
-                              <div className="flex flex-wrap gap-1.5">
-                              {job.stack.map((s) => (
-                                   <span
-                                   key={s}
-                                   className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-gray-500"
-                                   >
-                                   {s}
-                                   </span>
-                              ))}
-                              </div>
-                              </div>
-                         </div>
-                         )}
-                    </div>
-                    )
-                    })}
-               </div>
+                          <ul className="flex flex-col gap-2 mb-5 list-none p-0 m-0">
+                          {job.achievements.map((a, i) => (
+                                <li
+                                key={i}
+                                className="relative text-[13px] text-black leading-[1.8] pl-4
+                                    before:content-[''] before:absolute before:left-0 before:top-[9px]
+                                    before:w-1.5 before:h-1.5 before:rounded-full before:bg-indigo-500"
+                                >
+                                {a}
+                                </li>
+                          ))}
+                          </ul>
+
+                          <div className="flex flex-wrap gap-1.5">
+                          {job.stack.map((s) => (
+                                <span
+                                key={s}
+                                className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-gray-500"
+                                >
+                                {s}
+                                </span>
+                          ))}
+                          </div>
+                          </div>
+                      </div>
+                      )}
+                </div>
+                )
+                })}
+            </div>
           </div>
           <br/>
           <br/>
