@@ -85,7 +85,11 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border border-black py-24 px-6">
+    <section id="contact" className="border border-black px-8">
+     <br/>
+     <br/>
+     <br/>
+     <br/>
       <style>{`
         @keyframes slideUp {
           from { opacity: 0; transform: translateY(20px); }
@@ -109,7 +113,7 @@ export default function Contact() {
         textarea.field { resize: none; }
       `}</style>
 
-      <div className="max-w-5xl border mx-auto">
+      <div className="border mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
@@ -138,7 +142,7 @@ export default function Contact() {
                     key={label}
                     className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-gray-800"
                   >
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${highlight ? "bg-emerald-500/10 text-emerald-400" : "bg-gray-800 text-gray-400"}`}>
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 `}>
                       {icon}
                     </div>
                     <div>
@@ -165,7 +169,7 @@ export default function Contact() {
             </div>
 
             {/* Divider */}
-            <div className="h-px bg-gray-800" />
+            <div className="h-px" />
 
             {/* Socials */}
             <div>
@@ -297,6 +301,10 @@ export default function Contact() {
           </div>
         </div>       
       </div>
+     <br/>
+     <br/>
+     <br/>
+     <br/>
     </section>
   )
 }

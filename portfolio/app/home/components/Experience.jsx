@@ -95,7 +95,7 @@ export default function Experience() {
   const [active, setActive] = useState(1)
 
   return (
-    <section id="experience" className="border border-black max-w-5xl mx-auto px-4 min-h-screen">
+    <section id="experience" className="border border-black mx-auto px-8 min-h-screen">
           <br/>
           <br/>
           <br/>

@@ -25,8 +25,11 @@ const FACTS = [
 
 export default function About() {
   return (
-    <section id="about" className="border border-black py-24 px-6">
-      <div className="max-w-5xl border mx-auto">
+    <section id="about" className="border border-black px-8">
+      <br/>
+      <br/>
+      <br/>
+      <div className="border mx-auto">
 
         {/* ── Two-column layout ── */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
@@ -94,6 +97,9 @@ export default function About() {
           </div>
         </div>
       </div>
+      <br/>
+      <br/>
+      <br/>
     </section>
   )
 }

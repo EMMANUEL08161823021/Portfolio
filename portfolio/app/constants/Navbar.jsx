@@ -78,7 +78,7 @@ export default function Navbar() {
           ? "bg-[#03070f]/85 backdrop-blur-[14px] border-b border-white/[0.06]"
           : "bg-transparent border-b border-transparent"
       }`}>
-        <div className="max-w-6xl mx-auto px-6 h-[60px] flex items-center justify-between gap-6">
+        <div className="mx-auto px-6 h-[60px] flex items-center justify-between gap-6">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 no-underline">
