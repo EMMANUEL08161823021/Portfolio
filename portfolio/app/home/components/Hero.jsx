@@ -101,7 +101,7 @@ const Hero = () => {
         <div className="space-y-7">
           {/* Heading */}
           <div className="hero-item">
-            <h1 className="text-3xl sm:text-6xl font-extrabold leading-[1.08] tracking-tight text-black">
+            <h1 className="text-3xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight text-black">
               Hey,{" "}
               I'm Emmanuel
               <span className="relative inline-block text-[#869eda]">

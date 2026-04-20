@@ -75,14 +75,14 @@ export default function Navbar() {
       {/* ── Header ── */}
       <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         scrolled
-          ? "bg-[#03070f]/85 backdrop-blur-[14px] border-b border-white/[0.06]"
+          ? "bg-[#334b49] backdrop-blur-[14px] border-b border-white/[0.06]"
           : "bg-transparent border-b border-transparent"
       }`}>
-        <div className="mx-auto px-6 h-[60px] flex items-center justify-between gap-6">
+        <div className="mx-auto max-w-5xl px-6 h-[60px] flex items-center justify-between gap-6">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 no-underline">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[13px] font-extrabold text-black tracking-tight flex-shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-[#869eda] flex items-center justify-center text-[13px] font-extrabold text-black tracking-tight">
               EO
             </div>
             <span className="text-sm font-bold text-gray-50 tracking-tight whitespace-nowrap">
@@ -102,23 +102,6 @@ export default function Navbar() {
               />
             ))}
           </nav>
-
-          {/* Desktop CTAs */}
-          <div className="hidden md:flex items-center gap-2.5 flex-shrink-0">
-            <a
-              href="/cv.pdf"
-              download
-              className="text-xs font-semibold tracking-wide px-3.5 py-1.5 rounded-lg border border-gray-800 text-gray-300 hover:bg-gray-800 hover:border-gray-700 transition-all duration-150 whitespace-nowrap"
-            >
-              Resume
-            </a>
-            <a
-              href="#contact"
-              className="text-xs font-semibold tracking-wide px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-black transition-colors duration-150 whitespace-nowrap"
-            >
-              Hire me
-            </a>
-          </div>
 
           {/* Mobile hamburger */}
           <button
