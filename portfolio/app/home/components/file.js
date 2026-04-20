@@ -76,7 +76,7 @@ const Works = () => {
 
   return (
     <section className="bg-white dark:bg-gray-950 py-24">
-      <div className="w-full max-w-5xl mx-auto px-6">
+      <div className="w-full max-w-6xl px-4 mx-auto px-6">
 
         {/* Section label */}
         <p className="text-[10px] tracking-[0.25em] text-gray-400 uppercase mb-10">

@@ -95,7 +95,7 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative w-full max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative w-full max-w-6xl px-4 mx-auto py-24 grid md:grid-cols-2 gap-16 items-center">
 
         {/* ── LEFT ── */}
         <div className="space-y-7">

@@ -9,13 +9,14 @@ const JOBS = [
     initials: "P",
     logoBg: "bg-indigo-950",
     logoText: "text-indigo-300",
-    type: "Internship · Remote . Germany",
+    accentColor: "#6366f1",
+    type: "Internship · Remote · Germany",
     period: "March 2026",
     current: true,
-    desc: "Pivetra is a customer support platform",
+    desc: "Pivetra is a customer support platform.",
     achievements: [
-      "I migrated the admin UI from Material UI to shadcn/ui, optimizing Next.js rendering and lifecycle methods to significantly reduce bundle weight and improve responsiveness",
-      "I architected a scalable translation module to support multi-language localization (e.g., German, Hindi). Implemented dynamic language switching and context-aware string mapping to ensure a seamless experience for global users.",
+      "Migrated the admin UI from Material UI to shadcn/ui, reducing bundle weight and improving responsiveness.",
+      "Architected a scalable translation module to support multi-language localization (German, Hindi) with dynamic language switching.",
       "Rebuilt complex product flows using react-hook-form and Redux.",
     ],
     stack: ["Next.js", "JavaScript", "Tailwind CSS", "Redux"],
@@ -27,9 +28,10 @@ const JOBS = [
     initials: "SK",
     logoBg: "bg-green-950",
     logoText: "text-green-400",
+    accentColor: "#22c55e",
     type: "Contract · Remote",
     period: "2023 — 2024",
-    desc: "Built and maintained a real-time crypto transaction platform with editorial content integration. Sole developer responsible for both frontend and backend systems.",
+    desc: "Built and maintained a real-time crypto transaction platform with editorial content integration.",
     achievements: [
       "Architected real-time data pipeline handling 10k+ daily transactions using WebSockets.",
       "Integrated MongoDB with Next.js API routes, achieving sub-100ms average query response.",
@@ -44,15 +46,16 @@ const JOBS = [
     initials: "RL",
     logoBg: "bg-stone-900",
     logoText: "text-stone-400",
+    accentColor: "#a8a29e",
     type: "Remote",
     period: "Jan 2025",
-    desc: "Rootshive is a digital tool that helps people and businesses manage their money better. It's like a personal financial assistant that tracks income, expenses, and spending patterns.",
+    desc: "Rootshive is a digital tool that helps people and businesses manage their money better.",
     achievements: [
-      "Created visually appealing and responsive user interfaces for Rootshive's landing pages",
-      "Consistently met deadlines while delivering high-quality,  functional, and visually appealing results.",
+      "Created visually appealing and responsive user interfaces for Rootshive's landing pages.",
+      "Consistently met deadlines while delivering high-quality, functional, and visually appealing results.",
       "Utilized Bootstrap for layouts and responsive design, paired with CSS for deep custom styling in PHP environment.",
     ],
-    stack: ["HTML", "Booststrap", "PHP"],
+    stack: ["HTML", "Bootstrap", "PHP"],
   },
   {
     id: 4,
@@ -61,174 +64,177 @@ const JOBS = [
     initials: "LA",
     logoBg: "bg-violet-950",
     logoText: "text-violet-300",
+    accentColor: "#a78bfa",
     type: "Freelance · Remote · Abuja",
     period: "2024",
-    desc: "A Software That Monitors and Detect Leakages in Pipelines in Realtime and Sends Instant Alerts",
+    desc: "A software that monitors and detects leakages in pipelines in real-time and sends instant alerts.",
     achievements: [
       "Successfully developed a PWA to monitor pipeline systems in real-time using IoT sensors.",
-      "Implemented real-time updates and anomaly detection with alerts sent via email for critical issues like leaks.",
+      "Implemented real-time updates and anomaly detection with alerts sent via email for critical issues.",
       "Integrated React components with backend RESTful APIs for data retrieval and dynamic updates.",
     ],
     stack: ["React", "Framer Motion", "SCSS", "Git"],
   },
 ]
 
-const ChevronIcon = ({ open }) => (
-  <svg
-    width="16"
-    height="16"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={`transition-transform duration-300 ${
-      open ? "rotate-180 text-indigo-500" : "rotate-0 text-gray-600"
-    }`}
-  >
-    <path d="M6 9l6 6 6-6" />
+const ArrowIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M7 17L17 7M17 7H7M17 7v10" />
   </svg>
 )
 
 export default function Experience() {
-  const [active, setActive] = useState(1)
+  const [expanded, setExpanded] = useState(null)
 
   return (
-    <section id="experience" className="mx-auto px-4 md:px-8 min-h-screen">
-          <br/>
-          <br/>
-          <br/>
-          <style>{`
-          @keyframes slideDown {
-               from { opacity: 0; transform: translateY(-10px); }
-               to   { opacity: 1; transform: translateY(0); }
-          }
-          .exp-open { animation: slideDown 0.3s cubic-bezier(0.22,1,0.36,1) both; }
-          `}</style>
+    <section id="experience" className="px-4">
+      <br/>
+      <br/>
+      <br/>
+      <div className="max-w-6xl mx-auto">
 
-          <div className="w-full mx-auto">
-            {/* Header */}
-            <div>
-                <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold mb-3">
-                Experience
-                </p>
-                <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight mb-4">
-                Where I've worked
-                </h2>
-                <p className="text-[15px] text-black leading-relaxed max-w-sm">
-                A timeline of roles where I've shipped real products and grown as an engineer.
-                </p>
-            </div>
+        {/* Header */}
+        <div className="">
+          <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold mb-3">
+            Experience
+          </p>
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight mb-4">
+            Where I've worked
+          </h2>
+          <p className="text-[15px] text-gray-500 leading-relaxed max-w-sm">
+            A timeline of roles where I've shipped real products and grown as an engineer.
+          </p>
+        </div>
 
-            <br/>
-            <br/>
-            <br/>
+        {/* Cards grid */}
+        <div className="grid sm:grid-cols-2 gap-5">
+          {JOBS.map((job) => {
+            const isOpen = expanded === job.id
+            return (
+              <div
+                key={job.id}
+                className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-300 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-lg dark:hover:shadow-none"
+              >
+                {/* Top accent bar */}
+                <div
+                  className="h-0.5 w-full"
+                  style={{ background: job.accentColor }}
+                />
 
-            <div className="relative">
+                <div className="flex flex-col flex-1 p-6">
 
-                <div className="absolute left-5 top-2 bottom-0 w-px bg-gradient-to-b from-indigo-600 via-gray-800 to-transparent" />
-
-                {JOBS.map((job) => {
-                const isOpen = active === job.id
-
-                return (
-                <div key={job.id} className="relative pl-14 pb-9 last:pb-0">
-
-                      {/* Dot */}
+                  {/* Card header */}
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    <div className="flex items-center gap-3">
+                      {/* Company logo */}
                       <div
-                      className={`absolute left-3 top-1.5 z-10 w-4 h-4 rounded-full border-2 flex items-center justify-center bg-gray-950 transition-colors duration-200 ${
-                          isOpen ? "border-indigo-500" : "border-gray-700"
-                      }`}
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center text-[11px] font-extrabold flex-shrink-0 ${job.logoBg} ${job.logoText}`}
                       >
-                      <div
-                          className={`w-1.5 h-1.5 rounded-full transition-colors duration-200 ${
-                          isOpen ? "bg-indigo-500" : "bg-gray-700"
-                          }`}
-                      />
+                        {job.initials}
                       </div>
+                      <div>
+                        <p className="text-[13px] font-bold text-gray-900 dark:text-white leading-tight">
+                          {job.company}
+                        </p>
+                        <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5">
+                          {job.type}
+                        </p>
+                      </div>
+                    </div>
 
-                      {/* Header button */}
-                      <button
-                      onClick={() => setActive(isOpen ? -1 : job.id)}
-                      className="w-full text-left bg-transparent border-0 p-0 cursor-pointer group"
+                    {/* Period + current badge */}
+                    <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
+                      <span
+                        className="text-[10px] font-medium px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 whitespace-nowrap"
                       >
-                      {/* Title + period */}
-                      <div className="flex items-start justify-between gap-3 mb-2">
-                          <p className="text-[15px] font-bold text-black leading-snug">
-                          {job.title}
-                          {job.current && (
-                          <span className="ml-2 align-middle text-[10px] font-semibold px-2 py-0.5 rounded-full border border-emerald-500/25 text-emerald-400 tracking-wide">
-                                Current
-                          </span>
-                          )}
-                          </p>
-                          <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                          <span className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-gray-800 text-black whitespace-nowrap">
-                          {job.period}
-                          </span>
-                          <ChevronIcon open={isOpen} />
-                          </div>
-                      </div>
+                        {job.period}
+                      </span>
+                      {job.current && (
+                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 tracking-wide uppercase">
+                          Current
+                        </span>
+                      )}
+                    </div>
+                  </div>
 
-                      {/* Company */}
-                      <div className="flex items-center gap-2">
-                          <div
-                          className={`w-5 h-5 rounded-[4px] flex items-center justify-center text-[9px] font-extrabold flex-shrink-0 ${job.logoBg} ${job.logoText}`}
+                  {/* Role title */}
+                  <h3 className="text-[15px] font-bold text-gray-900 dark:text-white mb-2 leading-snug">
+                    {job.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                    {job.desc}
+                  </p>
+
+                  {/* Stack pills */}
+                  <div className="flex flex-wrap gap-1.5 mb-5">
+                    {job.stack.map((s) => (
+                      <span
+                        key={s}
+                        className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-400"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Expand toggle */}
+                  <button
+                    onClick={() => setExpanded(isOpen ? null : job.id)}
+                    className="mt-auto self-start inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                  >
+                    {isOpen ? "Show less" : "Key achievements"}
+                    <svg
+                      width="14" height="14" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" strokeWidth="2"
+                      strokeLinecap="round" strokeLinejoin="round"
+                      className={`transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+                    >
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </button>
+
+                  {/* Achievements — expandable */}
+                  {isOpen && (
+                    <div
+                      className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800"
+                      style={{ animation: "slideDown 0.3s cubic-bezier(0.22,1,0.36,1) both" }}
+                    >
+                      <style>{`
+                        @keyframes slideDown {
+                          from { opacity: 0; transform: translateY(-8px); }
+                          to   { opacity: 1; transform: translateY(0); }
+                        }
+                      `}</style>
+                      <ul className="flex flex-col gap-3">
+                        {job.achievements.map((a, i) => (
+                          <li
+                            key={i}
+                            className="relative text-[12.5px] text-gray-500 dark:text-gray-400 leading-[1.8] pl-4
+                              before:content-[''] before:absolute before:left-0 before:top-[8px]
+                              before:w-1.5 before:h-1.5 before:rounded-full"
+                            style={{ "--dot-color": job.accentColor }}
                           >
-                          {job.initials}
-                          </div>
-                          <span className="text-[13px] text-black font-medium">{job.company}</span>
-                          <span className="text-[11px] text-gray-700">· {job.type}</span>
-                      </div>
-                      </button>
-
-                      {/* Expandable card */}
-                    {isOpen && (
-                      <div className="hidden sm:block">
-                        <div className="exp-open mt-4">
-                          <div className="border border-gray-800 rounded-xl p-5">
-
-                            <p className="text-[13px] text-gray-400 leading-[1.85] mb-4">
-                              {job.desc}
-                            </p>
-
-                            <ul className="flex flex-col gap-2 mb-5 list-none p-0 m-0">
-                              {job.achievements.map((a, i) => (
-                                <li
-                                  key={i}
-                                  className="relative text-[13px] text-gray-400 leading-[1.8] pl-4
-                                    before:content-[''] before:absolute before:left-0 before:top-[9px]
-                                    before:w-1.5 before:h-1.5 before:rounded-full before:bg-indigo-500"
-                                >
-                                  {a}
-                                </li>
-                              ))}
-                            </ul>
-
-                            <div className="flex flex-wrap gap-1.5">
-                              {job.stack.map((s) => (
-                                <span
-                                  key={s}
-                                  className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-gray-300"
-                                >
-                                  {s}
-                                </span>
-                              ))}
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    )}
+                            <span
+                              className="absolute left-0 top-[8px] w-1.5 h-1.5 rounded-full flex-shrink-0"
+                              style={{ background: job.accentColor }}
+                            />
+                            {a}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-                )
-                })}
-            </div>
-          </div>
-          <br/>
-          <br/>
-          <br/>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+      <br/>
+      <br/>
+      <br/>
     </section>
   )
 }

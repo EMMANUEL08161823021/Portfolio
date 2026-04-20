@@ -123,11 +123,11 @@ const FACTS = [
 
 export default function About() {
   return (
-    <section id="about" className="px-4 md:px-8">
+    <section id="about" className="px-4">
       <br/>
       <br/>
       <br/>
-      <div className="mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* ── Two-column layout ── */}
         <div className="grid md:grid-cols-2 gap-16 items-start">

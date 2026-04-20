@@ -121,12 +121,11 @@ const ArrowIcon = () => (
 
 export default function Services() {
   return (
-    <section id="services" className="text-black px-4 md:px-8">
+    <section id="services" className="text-black">
       <br/>
       <br/>
       <br/>
-      <br/>
-      <div className="mx-auto">
+      <div className="max-w-6xl px-4 mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
@@ -171,7 +170,6 @@ export default function Services() {
         </div>
 
       </div>
-      <br/>
       <br/>
       <br/>
       <br/>
