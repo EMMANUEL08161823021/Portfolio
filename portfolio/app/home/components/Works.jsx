@@ -308,7 +308,7 @@ function DesktopScroll() {
       style={{ height: `${works.length * 100}vh` }}
       className="relative hidden md:block"
     >
-      <div className="sticky top-0 h-screen flex flex-col justify-center bg-[#334b49] overflow-hidden">
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
 
         <div className="px-4 md:px-8 mb-6">
           <p className="text-[10px] tracking-[0.25em] text-gray-400 uppercase">

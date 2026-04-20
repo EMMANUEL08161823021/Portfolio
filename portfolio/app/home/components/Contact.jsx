@@ -85,7 +85,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border border-black px-4 md:px-8">
+    <section id="contact" className="px-4 md:px-8">
      <br/>
      <br/>
      <br/>
@@ -113,10 +113,10 @@ export default function Contact() {
         textarea.field { resize: none; }
       `}</style>
 
-      <div className="border mx-auto">
+      <div className="mx-auto">
 
         {/* Header */}
-        <div className="mb-16 space-y-3">
+        <div className="mb-4 space-y-3">
           <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
             Contact
           </p>
@@ -131,73 +131,10 @@ export default function Contact() {
 
         <div className="grid md:grid-cols-5 gap-10">
 
-          {/* ── LEFT: Info ── */}
-          <div className="md:col-span-2 flex flex-col gap-6">
-
-            {/* Info cards */}
-            <div className="flex flex-col gap-3">
-              {INFO.map(({ label, value, href, icon, highlight }) => {
-                const inner = (
-                  <div
-                    key={label}
-                    className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-gray-800"
-                  >
-                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 `}>
-                      {icon}
-                    </div>
-                    <div>
-                      <p className="text-[10px] text-gray-600 uppercase tracking-widest font-medium mb-0.5">
-                        {label}
-                      </p>
-                      <p className={`text-[13px] font-semibold ${highlight ? "text-emerald-400" : "text-gray-200"}`}>
-                        {highlight && (
-                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 mb-0.5 animate-pulse" />
-                        )}
-                        {value}
-                      </p>
-                    </div>
-                  </div>
-                )
-                return href ? (
-                  <a key={label} href={href} className="hover:opacity-80 transition-opacity">
-                    {inner}
-                  </a>
-                ) : (
-                  <div key={label}>{inner}</div>
-                )
-              })}
-            </div>
-
-            {/* Divider */}
-            <div className="h-px" />
-
-            {/* Socials */}
-            <div>
-              <p className="text-[11px] text-gray-600 uppercase tracking-widest font-medium mb-3">
-                Find me on
-              </p>
-              <div className="flex items-center gap-2">
-                {SOCIALS.map(({ label, href, icon }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    aria-label={label}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-9 h-9 rounded-lg flex items-center justify-center text-black border border-gray-800 hover:text-indigo-400 hover:border-indigo-700 transition-all"
-                  >
-                    {icon}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* ── RIGHT: Form ── */}
           <div className="md:col-span-3">
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl border border-gray-800 p-7 flex flex-col gap-4"
+              className="rounded-2xl flex flex-col gap-4"
             >
 
               {/* Name + Email */}
@@ -299,6 +236,70 @@ export default function Contact() {
 
             </form>
           </div>
+
+          {/* ── LEFT: Info ── */}
+          <div className="md:col-span-2 flex flex-col gap-6">
+
+            {/* Info cards */}
+            <div className="flex flex-col gap-3">
+              {INFO.map(({ label, value, href, icon, highlight }) => {
+                const inner = (
+                  <div
+                    key={label}
+                    className="flex items-center gap-3 px-4 py-3.5 rounded-xl border border-gray-800"
+                  >
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 `}>
+                      {icon}
+                    </div>
+                    <div>
+                      <p className="text-[10px] text-gray-600 uppercase tracking-widest font-medium mb-0.5">
+                        {label}
+                      </p>
+                      <p className={`text-[13px] font-semibold ${highlight ? "text-emerald-400" : "text-gray-200"}`}>
+                        {highlight && (
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 mb-0.5 animate-pulse" />
+                        )}
+                        {value}
+                      </p>
+                    </div>
+                  </div>
+                )
+                return href ? (
+                  <a key={label} href={href} className="hover:opacity-80 transition-opacity">
+                    {inner}
+                  </a>
+                ) : (
+                  <div key={label}>{inner}</div>
+                )
+              })}
+            </div>
+
+            {/* Divider */}
+            <div className="h-px" />
+
+            {/* Socials */}
+            <div>
+              <p className="text-[11px] text-gray-600 uppercase tracking-widest font-medium mb-3">
+                Find me on
+              </p>
+              <div className="flex items-center gap-2">
+                {SOCIALS.map(({ label, href, icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    aria-label={label}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center text-black border border-gray-800 hover:text-indigo-400 hover:border-indigo-700 transition-all"
+                  >
+                    {icon}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+
         </div>       
       </div>
      <br/>

@@ -147,7 +147,7 @@ export default function Services() {
           {SERVICE_DATA.map((s) => (
             <article
               key={s.id}
-              className={`group relative bg-[#869eda] flex flex-col rounded-2xl border border-[#869eda] p-6 transition-all duration-300`}
+              className={`group relative flex flex-col rounded-2xl border border-black p-6 transition-all duration-300`}
             >
               {/* Top gradient wash on hover */}
               {/* <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 rounded-t-2xl bg-gradient-to-b ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} /> */}

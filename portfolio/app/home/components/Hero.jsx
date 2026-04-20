@@ -55,7 +55,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#334b49] flex items-center">
+    <section className="relative min-h-screen overflow-hidden bg-white flex items-center">
       <style>{`
         @keyframes heroIn {
           from { opacity: 0; transform: translateY(28px); }

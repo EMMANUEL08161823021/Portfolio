@@ -167,7 +167,7 @@ export default function Experience() {
                           <span className="text-[11px] font-medium px-2.5 py-1 rounded-full border border-gray-800 text-black whitespace-nowrap">
                           {job.period}
                           </span>
-                          {/* <ChevronIcon open={isOpen} /> */}
+                          <ChevronIcon open={isOpen} />
                           </div>
                       </div>
 
@@ -184,40 +184,43 @@ export default function Experience() {
                       </button>
 
                       {/* Expandable card */}
-                      {/* {isOpen && (
-                      <div className="exp-open mt-4">
+                    {isOpen && (
+                      <div className="hidden sm:block">
+                        <div className="exp-open mt-4">
                           <div className="border border-gray-800 rounded-xl p-5">
 
-                          <p className="text-[13px] text-black leading-[1.85] mb-4">
-                          {job.desc}
-                          </p>
+                            <p className="text-[13px] text-gray-400 leading-[1.85] mb-4">
+                              {job.desc}
+                            </p>
 
-                          <ul className="flex flex-col gap-2 mb-5 list-none p-0 m-0">
-                          {job.achievements.map((a, i) => (
+                            <ul className="flex flex-col gap-2 mb-5 list-none p-0 m-0">
+                              {job.achievements.map((a, i) => (
                                 <li
-                                key={i}
-                                className="relative text-[13px] text-black leading-[1.8] pl-4
+                                  key={i}
+                                  className="relative text-[13px] text-gray-400 leading-[1.8] pl-4
                                     before:content-[''] before:absolute before:left-0 before:top-[9px]
                                     before:w-1.5 before:h-1.5 before:rounded-full before:bg-indigo-500"
                                 >
-                                {a}
+                                  {a}
                                 </li>
-                          ))}
-                          </ul>
+                              ))}
+                            </ul>
 
-                          <div className="flex flex-wrap gap-1.5">
-                          {job.stack.map((s) => (
+                            <div className="flex flex-wrap gap-1.5">
+                              {job.stack.map((s) => (
                                 <span
-                                key={s}
-                                className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-black"
+                                  key={s}
+                                  className="text-[10px] font-medium tracking-wide px-2.5 py-1 rounded-full bg-gray-800 border border-gray-700/60 text-gray-300"
                                 >
-                                {s}
+                                  {s}
                                 </span>
-                          ))}
+                              ))}
+                            </div>
+
                           </div>
-                          </div>
+                        </div>
                       </div>
-                      )} */}
+                    )}
                 </div>
                 )
                 })}
