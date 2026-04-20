@@ -55,7 +55,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center">
+    <section className="relative min-h-screen overflow-hidden bg-[#334b49] flex items-center">
       <style>{`
         @keyframes heroIn {
           from { opacity: 0; transform: translateY(28px); }
@@ -85,14 +85,6 @@ const Hero = () => {
         .scroll-hint { animation: scrollBounce 1.8s ease-in-out infinite; }
       `}</style>
 
-      {/* Radial glow */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(79,70,229,0.12) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 20% 80%, rgba(16,185,129,0.06) 0%, transparent 60%)",
-        }}
-      />
 
       {/* Dot grid */}
       <div
@@ -103,16 +95,16 @@ const Hero = () => {
         }}
       />
 
-      <div className="relative w-full max-w-5xl mx-auto border border-black px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative w-full max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
 
         {/* ── LEFT ── */}
-        <div className="space-y-7 border border-black">
+        <div className="space-y-7">
           {/* Heading */}
           <div className="hero-item">
             <h1 className="text-3xl sm:text-6xl font-extrabold leading-[1.08] tracking-tight text-black">
               Hey,{" "}
               I'm Emmanuel
-              <span className="relative inline-block text-indigo-400">
+              <span className="relative inline-block text-[#869eda]">
                 Software Engineer
 
               </span>
@@ -128,7 +120,7 @@ const Hero = () => {
           <div className="hero-item flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 text-white transition-all active:scale-[0.97]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 text-white transition-all active:scale-[0.97]"
             >
               See my work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
