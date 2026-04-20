@@ -135,7 +135,7 @@ export default function About() {
           {/* LEFT — Bio */}
           <div className="space-y-8">
             <div className="space-y-3">
-              <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
+              <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
                 About me
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function About() {
 
           {/* Stack label */}
           <div className="space-y-4">
-            <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
+            <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
               Tech stack
             </p>
             <div className="grid grid-cols-3 gap-2">

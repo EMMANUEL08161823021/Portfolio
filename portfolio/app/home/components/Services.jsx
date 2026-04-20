@@ -129,14 +129,14 @@ export default function Services() {
 
         {/* Header */}
         <div className="mb-4 space-y-3">
-          <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
+          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
             Services
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
             What I can build
             <span className="text-[#869eda]"> for you</span>
           </h2>
-          <p className="text-[15px] text-black leading-relaxed max-w-lg">
+          <p className="text-[15px] text-gray-900 leading-relaxed max-w-lg">
             End-to-end engineering — from a single feature to a full product. Here's what I bring to the table.
           </p>
         </div>
@@ -146,7 +146,7 @@ export default function Services() {
           {SERVICE_DATA.map((s) => (
             <article
               key={s.id}
-              className={`group relative flex flex-col rounded-2xl border border-black p-6 transition-all duration-300`}
+              className={`group relative flex flex-col rounded-2xl border border-[#869eda] p-6 transition-all duration-300`}
             >
               {/* Top gradient wash on hover */}
               {/* <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 rounded-t-2xl bg-gradient-to-b ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} /> */}
@@ -162,7 +162,7 @@ export default function Services() {
               </h3>
 
               {/* Description */}
-              <p className="relative text-[13px] text-black leading-[1.85] flex-1 mb-5">
+              <p className="relative text-[13px] text-gray-900 leading-[1.85] flex-1 mb-5">
                 {s.description}
               </p>
             </article>

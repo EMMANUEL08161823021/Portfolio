@@ -9,11 +9,11 @@ const JOBS = [
     initials: "P",
     logoBg: "bg-indigo-950",
     logoText: "text-indigo-300",
-    accentColor: "#6366f1",
+    accentColor: "#869eda",
     type: "Internship · Remote · Germany",
     period: "March 2026",
     current: true,
-    desc: "Pivetra is a customer support platform.",
+    desc: "Pivetra is a modern SaaS platform designed to streamline collaboration, documentation, and customer support for startups and growing teams.",
     achievements: [
       "Migrated the admin UI from Material UI to shadcn/ui, reducing bundle weight and improving responsiveness.",
       "Architected a scalable translation module to support multi-language localization (German, Hindi) with dynamic language switching.",
@@ -28,7 +28,7 @@ const JOBS = [
     initials: "SK",
     logoBg: "bg-green-950",
     logoText: "text-green-400",
-    accentColor: "#22c55e",
+    accentColor: "#4790f9",
     type: "Contract · Remote",
     period: "2023 — 2024",
     desc: "Built and maintained a real-time crypto transaction platform with editorial content integration.",
@@ -46,8 +46,8 @@ const JOBS = [
     initials: "RL",
     logoBg: "bg-stone-900",
     logoText: "text-stone-400",
-    accentColor: "#a8a29e",
-    type: "Remote",
+    accentColor: "#f4f9ff",
+    type: "Full-time · Remote · Lekki",
     period: "Jan 2025",
     desc: "Rootshive is a digital tool that helps people and businesses manage their money better.",
     achievements: [
@@ -64,7 +64,7 @@ const JOBS = [
     initials: "LA",
     logoBg: "bg-violet-950",
     logoText: "text-violet-300",
-    accentColor: "#a78bfa",
+    accentColor: "#e6f4f1",
     type: "Freelance · Remote · Abuja",
     period: "2024",
     desc: "A software that monitors and detects leakages in pipelines in real-time and sends instant alerts.",
@@ -95,7 +95,7 @@ export default function Experience() {
 
         {/* Header */}
         <div className="">
-          <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold mb-3">
+          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase mb-3">
             Experience
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight mb-4">
@@ -113,7 +113,7 @@ export default function Experience() {
             return (
               <div
                 key={job.id}
-                className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 overflow-hidden transition-all duration-300 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-lg dark:hover:shadow-none"
+                className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#869eda] overflow-hidden transition-all duration-300 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-lg dark:hover:shadow-none"
               >
                 {/* Top accent bar */}
                 <div
@@ -163,7 +163,7 @@ export default function Experience() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[13px] text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
+                  <p className="text-[13px] text-gray-500 dark:text-gray-900 leading-relaxed mb-4">
                     {job.desc}
                   </p>
 

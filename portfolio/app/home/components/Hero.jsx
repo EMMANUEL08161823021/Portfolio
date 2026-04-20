@@ -112,7 +112,7 @@ const Hero = () => {
           </div>
 
           {/* Bio */}
-          <p className="hero-item text-base text-gray-400 leading-relaxed max-w-md font-normal">
+          <p className="hero-item text-base text-gray-900 leading-relaxed max-w-md font-normal">
             I'm passionate about building and scaling up businesses using software.
           </p>
 

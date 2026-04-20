@@ -5,6 +5,16 @@ import Image from "next/image";
 
 const works = [
   {
+    id: 0,
+    projectName: "PawChain",
+    category: "Web3 Crypto",
+    projectDesc: "PawChain is a hybrid decentralized pet marketplace built on Solana Devnet. Pay for pets using SOL.",
+    projectLink: "https://pet-shop-umber-three.vercel.app/",
+    projectStacks: ["Next.js", "Tailwind CSS", "Web.js", "Superbase"],
+    color: "#c8bfb0",
+    image: "/images/pawchain.jpg",
+  },
+  {
     id: 1,
     projectName: "SPACES",
     category: "Film & Web",
@@ -310,8 +320,8 @@ function DesktopScroll() {
     >
       <div className="sticky max-w-6xl px-4 mx-auto top-0 h-screen flex flex-col justify-center overflow-hidden">
 
-        <div className="px-4 md:px-8 mb-6">
-          <p className="text-[10px] tracking-[0.25em] text-gray-400 uppercase">
+        <div className="mb-6">
+          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
             My Projects
           </p>
         </div>
@@ -323,7 +333,7 @@ function DesktopScroll() {
           {/* LEFT */}
           <div
             className="relative flex flex-col justify-between flex-shrink-0"
-            style={{ width: "40%", background: "#f0ede8" }}
+            style={{ width: "40%", background: "#f4f9ff" }}
           >
             <div className="flex flex-col items-start justify-center flex-1 px-10 py-12 gap-0.5">
               {works.map((project, i) => (
@@ -344,7 +354,7 @@ function DesktopScroll() {
                     {active === i && (
                       <motion.span
                         layoutId="underline"
-                        className="absolute left-0 bottom-0 h-px bg-gray-800"
+                        className="absolute left-0 bottom-0 h-px bg-gray-900"
                         style={{ width: "100%" }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
                       />
