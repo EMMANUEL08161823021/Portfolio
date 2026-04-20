@@ -317,7 +317,7 @@ function DesktopScroll() {
         </div>
 
         <div
-          className="flex mx-6 rounded-2xl overflow-hidden border border-gray-200"
+          className="flex rounded-2xl overflow-hidden border border-gray-200"
           style={{ height: "78vh" }}
         >
           {/* LEFT */}

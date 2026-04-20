@@ -116,7 +116,7 @@ export default function Contact() {
 
         {/* Header */}
         <div className="mb-4 space-y-3">
-          <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
+          <p className="text-[11px] tracking-[0.22em] uppercase text-black font-semibold">
             Contact
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight">
@@ -169,7 +169,7 @@ export default function Contact() {
 
               {/* Subject */}
               <div className="flex flex-col gap-1.5">
-                <label className="text-[11px] text-black uppercase tracking-widest font-medium">
+                <label className="text-[11px] text-black uppercase  font-medium">
                   Subject
                 </label>
                 <input

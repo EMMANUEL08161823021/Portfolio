@@ -128,7 +128,7 @@ export default function Services() {
       <div className="max-w-6xl px-4 mx-auto">
 
         {/* Header */}
-        <div className="mb-16 space-y-3">
+        <div className="mb-4 space-y-3">
           <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
             Services
           </p>

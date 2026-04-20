@@ -101,7 +101,7 @@ export default function Experience() {
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight mb-4">
             Where I've worked
           </h2>
-          <p className="text-[15px] text-gray-500 leading-relaxed max-w-sm">
+          <p className="text-[15px] my-4 text-gray-500 leading-relaxed max-w-sm">
             A timeline of roles where I've shipped real products and grown as an engineer.
           </p>
         </div>

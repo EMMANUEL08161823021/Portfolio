@@ -73,11 +73,7 @@ export default function Navbar() {
   return (
     <>
       {/* ── Header ── */}
-      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        scrolled
-          ? "bg-[#334b49] backdrop-blur-[14px] border-b border-white/[0.06]"
-          : "bg-transparent border-b border-transparent"
-      }`}>
+      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-black backdrop-blur-[14px] border-b border-white/[0.06]`}>
         <div className="max-w-6xl px-4 mx-auto h-[60px] flex items-center justify-between gap-6">
 
           {/* Logo */}
@@ -85,7 +81,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-[#869eda] flex items-center justify-center text-[13px] font-extrabold text-black tracking-tight">
               EO
             </div>
-            <span className="text-sm font-bold text-gray-50 tracking-tight whitespace-nowrap">
+            <span className="text-sm font-bold text-white tracking-tight whitespace-nowrap">
               Emmanuel Oguntolu
             </span>
           </Link>
