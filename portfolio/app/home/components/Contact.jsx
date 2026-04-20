@@ -85,7 +85,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="border border-black px-8">
+    <section id="contact" className="border border-black px-4 md:px-8">
      <br/>
      <br/>
      <br/>
@@ -278,7 +278,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-1 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white transition-all active:scale-[0.98]"
+                className="mt-1 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-black transition-all active:scale-[0.98]"
               >
                 {status === "sending" ? (
                   <>

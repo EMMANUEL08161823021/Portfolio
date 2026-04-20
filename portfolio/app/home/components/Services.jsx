@@ -121,21 +121,21 @@ const ArrowIcon = () => (
 
 export default function Services() {
   return (
-    <section id="services" className="border border-black text-black px-8">
+    <section id="services" className="text-black px-4 md:px-8">
       <br/>
       <br/>
       <br/>
       <br/>
-      <div className="border mx-auto">
+      <div className="mx-auto">
 
         {/* Header */}
         <div className="mb-16 space-y-3">
-          <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
+          <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
             Services
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight">
             What I can build
-            <span className="text-indigo-400"> for you</span>
+            <span className="text-[#869eda]"> for you</span>
           </h2>
           <p className="text-[15px] text-black leading-relaxed max-w-lg">
             End-to-end engineering — from a single feature to a full product. Here's what I bring to the table.
@@ -147,7 +147,7 @@ export default function Services() {
           {SERVICE_DATA.map((s) => (
             <article
               key={s.id}
-              className={`group relative flex flex-col rounded-2xl border border-black p-6 transition-all duration-300`}
+              className={`group relative bg-[#869eda] flex flex-col rounded-2xl border border-[#869eda] p-6 transition-all duration-300`}
             >
               {/* Top gradient wash on hover */}
               {/* <div className={`pointer-events-none absolute inset-x-0 top-0 h-32 rounded-t-2xl bg-gradient-to-b ${s.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} /> */}

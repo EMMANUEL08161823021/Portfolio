@@ -199,12 +199,12 @@ function MobileCarousel() {
             {/* Project name + desc — bottom overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-5">
               <h3
-                className="text-white font-bold mb-2 leading-tight"
+                className="text-black font-bold mb-2 leading-tight"
                 style={{ fontSize: "clamp(1.6rem, 7vw, 2.2rem)", letterSpacing: "-0.02em" }}
               >
                 {project.projectName}
               </h3>
-              <p className="text-white/70 text-[13px] leading-relaxed mb-4">
+              <p className="text-black/70 text-[13px] leading-relaxed mb-4">
                 {project.projectDesc}
               </p>
 
@@ -230,7 +230,7 @@ function MobileCarousel() {
                 href={project.projectLink}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-widest uppercase text-white/50 hover:text-white transition-colors"
+                className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-widest uppercase text-black/50 hover:text-black transition-colors"
               >
                 Visit site <ExternalIcon />
               </a>
@@ -310,7 +310,7 @@ function DesktopScroll() {
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center bg-white overflow-hidden">
 
-        <div className="px-8 mb-6">
+        <div className="px-4 md:px-8 mb-6">
           <p className="text-[10px] tracking-[0.25em] text-gray-400 uppercase">
             My Projects
           </p>

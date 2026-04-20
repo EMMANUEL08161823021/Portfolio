@@ -18,7 +18,7 @@ export const CTAButton = React.forwardRef(function CTAButton(props, ref) {
 
   const base = 'inline-flex cursor-pointer whitespace-nowrap items-center justify-center rounded-full font-semibold transition-shadow';
   const variants = {
-    primary: 'bg-[#D6862E] text-white hover:bg-gray-800',
+    primary: 'bg-[#D6862E] text-black hover:bg-gray-800',
     ghost: 'bg-transparent text-[#F3F4F6] hover:bg-gray-50',
     white: 'bg-white text-black hover:bg-gray-100 border',
   };

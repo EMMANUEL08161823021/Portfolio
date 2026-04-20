@@ -120,7 +120,7 @@ const Hero = () => {
           <div className="hero-item flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 text-white transition-all active:scale-[0.97]"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 text-black transition-all active:scale-[0.97]"
             >
               See my work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

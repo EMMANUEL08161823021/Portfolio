@@ -30,7 +30,7 @@ function NavLink({ href, label, active, onClick }) {
       href={href}
       onClick={onClick}
       className={`relative text-[13px] font-medium tracking-wide py-1 transition-colors duration-150 group
-        ${active === href ? "text-white" : "text-gray-400 hover:text-gray-50"}`}
+        ${active === href ? "text-black" : "text-gray-400 hover:text-gray-50"}`}
     >
       {label}
       <span className={`absolute -bottom-0.5 left-0 h-[1.5px] rounded-full bg-indigo-500 transition-all duration-200
@@ -82,7 +82,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 no-underline">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[13px] font-extrabold text-white tracking-tight flex-shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[13px] font-extrabold text-black tracking-tight flex-shrink-0">
               EO
             </div>
             <span className="text-sm font-bold text-gray-50 tracking-tight whitespace-nowrap">
@@ -114,7 +114,7 @@ export default function Navbar() {
             </a>
             <a
               href="#contact"
-              className="text-xs font-semibold tracking-wide px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition-colors duration-150 whitespace-nowrap"
+              className="text-xs font-semibold tracking-wide px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-black transition-colors duration-150 whitespace-nowrap"
             >
               Hire me
             </a>
@@ -153,7 +153,7 @@ export default function Navbar() {
           {/* Sidebar header */}
           <div className="flex items-center justify-between px-5 py-4 border-b border-gray-800">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[11px] font-extrabold text-white">
+              <div className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[11px] font-extrabold text-black">
                 EO
               </div>
               <span className="text-[13px] font-bold text-gray-50">Emmanuel</span>
@@ -192,7 +192,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] bg-indigo-600 hover:bg-indigo-700 text-white transition-colors"
+              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] bg-indigo-600 hover:bg-indigo-700 text-black transition-colors"
             >
               Hire me
             </a>

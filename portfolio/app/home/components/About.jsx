@@ -123,11 +123,11 @@ const FACTS = [
 
 export default function About() {
   return (
-    <section id="about" className="border border-black px-8">
+    <section id="about" className="px-4 md:px-8">
       <br/>
       <br/>
       <br/>
-      <div className="border mx-auto">
+      <div className="mx-auto">
 
         {/* ── Two-column layout ── */}
         <div className="grid md:grid-cols-2 gap-16 items-start">
@@ -135,7 +135,7 @@ export default function About() {
           {/* LEFT — Bio */}
           <div className="space-y-8">
             <div className="space-y-3">
-              <p className="text-[11px] tracking-[0.22em] uppercase text-indigo-500 font-semibold">
+              <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
                 About me
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function About() {
 
           {/* Stack label */}
           <div className="space-y-4">
-            <p className="text-[11px] tracking-[0.22em] uppercase text-gray-600 font-semibold">
+            <p className="text-[11px] tracking-[0.22em] uppercase text-[#869eda] font-semibold">
               Tech stack
             </p>
             <div className="flex flex-wrap gap-2">
