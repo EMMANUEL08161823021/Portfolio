@@ -10,7 +10,7 @@ const JOBS = [
     logoBg: "bg-indigo-950",
     logoText: "text-indigo-300",
     type: "Internship · Remote . Germany",
-    period: "Nov 2025 — March 2026",
+    period: "March 2026",
     current: true,
     desc: "Pivetra is a customer support platform",
     achievements: [
@@ -45,7 +45,7 @@ const JOBS = [
     logoBg: "bg-stone-900",
     logoText: "text-stone-400",
     type: "Remote",
-    period: "May 2024 - Jan 2025",
+    period: "Jan 2025",
     desc: "Rootshive is a digital tool that helps people and businesses manage their money better. It's like a personal financial assistant that tracks income, expenses, and spending patterns.",
     achievements: [
       "Created visually appealing and responsive user interfaces for Rootshive's landing pages",

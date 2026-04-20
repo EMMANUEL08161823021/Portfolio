@@ -1,21 +1,7 @@
 "use client"
 
-const SKILLS = [
-  { name: "HTML",        icon: "🟧" },
-  { name: "CSS / SCSS",  icon: "🟦" },
-  { name: "JavaScript",  icon: "🟨" },
-  { name: "TypeScript",  icon: "🔷" },
-  { name: "React",       icon: "⚛️" },
-  { name: "Next.js",     icon: "▲" },
-  { name: "Node.js",     icon: "🟩" },
-  { name: "MongoDB",     icon: "🍃" },
-  { name: "Firebase",    icon: "🔥" },
-  { name: "Tailwind CSS",icon: "🌊" },
-  { name: "Bootstrap",   icon: "🅱️" },
-  { name: "Framer Motion",icon: "🎞️" },
-  { name: "Git",         icon: "🔀" },
-  { name: "Figma",       icon: "🎨" },
-]
+import FullStackVenn from "./FullstackVenn"
+
 
 const FACTS = [
   { value: "4+",  label: "Years building" },
@@ -75,25 +61,12 @@ export default function About() {
             </div>
           </div>
 
-          {/* RIGHT — Tech stack */}
-          <div className="space-y-8">
-
-            {/* Stack label */}
-            <div className="space-y-8">
-              <p className="text-[11px] tracking-[0.22em] uppercase text-gray-600 font-semibold mb-3">
-                Tech stack
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {SKILLS.map(({ name }) => (
-                  <span
-                    key={name}
-                    className="text-[12px] font-medium px-3 py-1.5 rounded-lg bg-gray-900 border border-gray-800 text-gray-400 hover:border-indigo-700 hover:text-indigo-300 transition-colors cursor-default"
-                  >
-                    {name}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {/* Stack label */}
+          <div className="space-y-4">
+            <p className="text-[11px] tracking-[0.22em] uppercase text-gray-600 font-semibold">
+              Tech stack
+            </p>
+            <FullStackVenn/>
           </div>
         </div>
       </div>
