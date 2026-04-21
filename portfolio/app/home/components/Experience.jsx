@@ -112,7 +112,7 @@ export default function Experience() {
             return (
               <div
                 key={job.id}
-                className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#869eda] overflow-hidden transition-all duration-300 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-lg dark:hover:shadow-none"
+                className="group relative flex flex-col rounded-2xl border border-gray-100 dark:border-white bg-white dark:bg-black overflow-hidden transition-all duration-300 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-lg dark:hover:shadow-none"
               >
                 {/* Top accent bar */}
                 <div
@@ -144,7 +144,7 @@ export default function Experience() {
                     {/* Period + current badge */}
                     <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
                       <span
-                        className="text-[10px] font-medium px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-black whitespace-nowrap"
+                        className="text-[10px] font-medium px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-white whitespace-nowrap"
                       >
                         {job.period}
                       </span>
@@ -157,7 +157,7 @@ export default function Experience() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[13px] text-gray-500 dark:text-gray-900 leading-relaxed mb-4">
+                  <p className="text-[13px] text-gray-500 dark:text-white leading-relaxed mb-4">
                     {job.desc}
                   </p>
 
@@ -176,7 +176,7 @@ export default function Experience() {
                   {/* Expand toggle */}
                   <button
                     onClick={() => setExpanded(isOpen ? null : job.id)}
-                    className="mt-auto self-start inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-black hover:text-gray-900 dark:hover:text-white transition-colors"
+                    className="mt-auto self-start inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-black dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     {isOpen ? "Show less" : "Key achievements"}
                     <svg
@@ -205,7 +205,7 @@ export default function Experience() {
                         {job.achievements.map((a, i) => (
                           <li
                             key={i}
-                            className="relative text-[12.5px] text-gray-500 dark:text-black leading-[1.8] pl-4
+                            className="relative text-[12.5px] text-gray-500 dark:text-white leading-[1.8] pl-4
                               before:content-[''] before:absolute before:left-0 before:top-[8px]
                               before:w-1.5 before:h-1.5 before:rounded-full"
                             style={{ "--dot-color": job.accentColor }}
