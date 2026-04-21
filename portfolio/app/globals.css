@@ -2,6 +2,12 @@
 @import "tailwindcss";
 
 
+html {
+  scroll-behavior: smooth;
+  scroll-margin-top: -70px; /* match your navbar height */
+}
+
+
 @font-face {
   font-family: 'Montserrat';
   src: url('./fonts/static/Montserrat-Light.ttf');
@@ -33,6 +39,8 @@
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
+
 
 /* Original custom properties (keep your values) */
 :root {

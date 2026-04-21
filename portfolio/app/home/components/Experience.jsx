@@ -86,21 +86,21 @@ export default function Experience() {
   const [expanded, setExpanded] = useState(null)
 
   return (
-    <section id="experience" className="px-4">
+    <section id="experience" className="dark:bg-[#000]">
       <br/>
       <br/>
       <br/>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl px-4 mx-auto">
 
         {/* Header */}
         <div className="">
-          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase mb-3">
+          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda]  dark:text-white uppercase mb-3">
             Experience
           </p>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black leading-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black  dark:text-white leading-tight mb-4">
             Where I've worked
           </h2>
-          <p className="text-[15px] my-4 text-gray-500 leading-relaxed max-w-sm">
+          <p className="text-[15px] my-4 text-gray-500 dark:text-white leading-relaxed max-w-sm">
             A timeline of roles where I've shipped real products and grown as an engineer.
           </p>
         </div>
@@ -144,15 +144,10 @@ export default function Experience() {
                     {/* Period + current badge */}
                     <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
                       <span
-                        className="text-[10px] font-medium px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-gray-400 whitespace-nowrap"
+                        className="text-[10px] font-medium px-2.5 py-1 rounded-full border border-gray-100 dark:border-gray-800 text-gray-500 dark:text-black whitespace-nowrap"
                       >
                         {job.period}
                       </span>
-                      {job.current && (
-                        <span className="text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 tracking-wide uppercase">
-                          Current
-                        </span>
-                      )}
                     </div>
                   </div>
 
@@ -181,7 +176,7 @@ export default function Experience() {
                   {/* Expand toggle */}
                   <button
                     onClick={() => setExpanded(isOpen ? null : job.id)}
-                    className="mt-auto self-start inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                    className="mt-auto self-start inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-wide text-black hover:text-gray-900 dark:hover:text-white transition-colors"
                   >
                     {isOpen ? "Show less" : "Key achievements"}
                     <svg
@@ -210,7 +205,7 @@ export default function Experience() {
                         {job.achievements.map((a, i) => (
                           <li
                             key={i}
-                            className="relative text-[12.5px] text-gray-500 dark:text-gray-400 leading-[1.8] pl-4
+                            className="relative text-[12.5px] text-gray-500 dark:text-black leading-[1.8] pl-4
                               before:content-[''] before:absolute before:left-0 before:top-[8px]
                               before:w-1.5 before:h-1.5 before:rounded-full"
                             style={{ "--dot-color": job.accentColor }}

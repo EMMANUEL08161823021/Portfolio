@@ -5,10 +5,10 @@ import Link from "next/link"
 
 const NAV_LINKS = [
   { label: "Home",     href: "#home" },
-  { label: "About",    href: "#about" },
-  { label: "Works",    href: "#works" },
   { label: "Services", href: "#services" },
-  { label: "Posts",    href: "#posts" },
+  { label: "About",    href: "#about" },
+  { label: "Experience",    href: "#experience" },
+  { label: "Works",    href: "#projects" },
   { label: "Contact",  href: "#contact" },
 ]
 
@@ -154,16 +154,6 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="flex items-center gap-2 flex-shrink-0">
-
-            {/* Theme toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle theme"
-              className="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-150"
-            >
-              {dark ? <SunIcon /> : <MoonIcon />}
-            </button>
-
             {/* Desktop CTA */}
             <a
               href="#contact"
@@ -236,24 +226,6 @@ export default function Navbar() {
               />
             ))}
           </nav>
-
-          {/* Sidebar CTAs */}
-          <div className="px-5 py-5 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-2.5">
-            <a
-              href="/cv.pdf"
-              download
-              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-            >
-              Download Resume
-            </a>
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] bg-[#869eda] hover:bg-[#6f86d6] text-white transition-colors"
-            >
-              Hire me
-            </a>
-          </div>
 
           <div className="px-5 py-3 text-[11px] text-gray-400 dark:text-gray-700 text-center">
             © {new Date().getFullYear()} Emmanuel Oguntolu

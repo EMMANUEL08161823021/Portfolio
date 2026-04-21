@@ -85,7 +85,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="px-4">
+    <section id="contact">
      <br/>
      <br/>
      <br/>
@@ -117,7 +117,7 @@ export default function Contact() {
           textarea.field { resize: none; }
       `}</style>
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl px-4 mx-auto">
 
         {/* Header */}
         <div className="mb-4 space-y-3">

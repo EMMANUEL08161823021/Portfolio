@@ -131,12 +131,12 @@ function MobileCarousel() {
   };
 
   return (
-    <div className="md:hidden flex flex-col bg-white min-h-screen">
+    <div id="projects" className="md:hidden flex flex-col bg-white min-h-screen">
 
       {/* Header */}
       <div className="px-5 pt-10 pb-4">
-        <p className="text-[10px] tracking-[0.25em] text-gray-400 uppercase mb-1">
-          My Projects
+        <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
+          WORK OF ARTS
         </p>
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold text-gray-900 tracking-tight">
@@ -317,12 +317,13 @@ function DesktopScroll() {
       ref={containerRef}
       style={{ height: `${works.length * 100}vh` }}
       className="relative hidden md:block"
+      
     >
-      <div className="sticky max-w-6xl px-4 mx-auto top-0 h-screen flex flex-col justify-center overflow-hidden">
+      <div id="projects" className="sticky max-w-6xl px-4 mx-auto top-0 h-screen flex flex-col justify-center overflow-hidden">
 
         <div className="mb-6">
           <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
-            My Projects
+            WORK OF ARTS
           </p>
         </div>
 

@@ -7,7 +7,7 @@ const Footer = () => {
           © {new Date().getFullYear()} Emmanuel Oguntolu. All rights reserved.
         </p>
         <p className="text-[13px] text-gray-700">
-          Built with Next.js · Tailwind CSS · Aeonik Pro
+          Built with Next.js · Tailwind CSS · Montserrat
         </p>
       </div>
   )
