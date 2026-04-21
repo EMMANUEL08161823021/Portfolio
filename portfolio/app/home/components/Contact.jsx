@@ -97,19 +97,24 @@ export default function Contact() {
         .contact-in { animation: slideUp 0.5s ease both; }
         .field {
           width: 100%;
-          background: #080c14;
-          border: 1px solid #1f2937;
+          background: rgba(134, 158, 218, 0.08);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(134, 158, 218, 0.25);
           border-radius: 10px;
           padding: 11px 14px;
           font-size: 14px;
-          color: #f9fafb;
+          color: #111827;
           outline: none;
-          transition: border-color 0.2s;
+          transition: border-color 0.2s, background 0.2s;
           font-family: inherit;
-        }
-        .field::placeholder { color: #4b5563; }
-        .field:focus { border-color: #4f46e5; }
-        textarea.field { resize: none; }
+          }
+          .field::placeholder { color: #9ca3af; }
+          .field:focus {
+          border-color: rgba(134, 158, 218, 0.6);
+          background: rgba(134, 158, 218, 0.12);
+          }
+          textarea.field { resize: none; }
       `}</style>
 
       <div className="max-w-6xl mx-auto">
@@ -251,10 +256,10 @@ export default function Contact() {
                       {icon}
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-600 uppercase tracking-widest font-medium mb-0.5">
+                      <p className="text-[10px] text-gray-900 uppercase tracking-widest font-medium mb-0.5">
                         {label}
                       </p>
-                      <p className={`text-[13px] font-semibold ${highlight ? "text-emerald-400" : "text-gray-200"}`}>
+                      <p className={`text-[13px] font-semibold ${highlight ? "text-emerald-400" : "text-gray-900"}`}>
                         {highlight && (
                           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 mb-0.5 animate-pulse" />
                         )}
@@ -289,7 +294,7 @@ export default function Contact() {
                     aria-label={label}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-lg flex items-center justify-center text-black border border-gray-800 hover:text-indigo-400 hover:border-indigo-700 transition-all"
+                    className="w-9 h-9 rounded-lg flex items-center justify-center text-black border border-gray-900 hover:text-indigo-400 hover:border-indigo-700 transition-all"
                   >
                     {icon}
                   </a>

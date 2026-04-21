@@ -24,16 +24,32 @@ const MenuIcon = () => (
   </svg>
 )
 
+const SunIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+  </svg>
+)
+
+const MoonIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+  </svg>
+)
+
 function NavLink({ href, label, active, onClick }) {
   return (
     <a
       href={href}
       onClick={onClick}
       className={`relative text-[13px] font-medium tracking-wide py-1 transition-colors duration-150 group
-        ${active === href ? "text-black" : "text-gray-400 hover:text-gray-50"}`}
+        ${active === href
+          ? "text-gray-900 dark:text-white"
+          : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+        }`}
     >
       {label}
-      <span className={`absolute -bottom-0.5 left-0 h-[1.5px] rounded-full bg-indigo-500 transition-all duration-200
+      <span className={`absolute -bottom-0.5 left-0 h-[1.5px] rounded-full bg-[#869eda] transition-all duration-200
         ${active === href ? "w-full" : "w-0 group-hover:w-full"}`}
       />
     </a>
@@ -45,9 +61,12 @@ function MobileLink({ href, label, active, onClick }) {
     <a
       href={href}
       onClick={onClick}
-      className={`block text-[15px] font-medium py-2.5 border-b border-gray-800 tracking-wide transition-all duration-150
-        hover:text-gray-50 hover:pl-1.5
-        ${active === href ? "text-gray-50" : "text-gray-400"}`}
+      className={`block text-[15px] font-medium py-2.5 border-b border-gray-100 dark:border-gray-800 tracking-wide transition-all duration-150
+        hover:pl-1.5
+        ${active === href
+          ? "text-gray-900 dark:text-white"
+          : "text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+        }`}
     >
       {label}
     </a>
@@ -58,6 +77,23 @@ export default function Navbar() {
   const [open,     setOpen]     = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [active,   setActive]   = useState("#home")
+  const [dark,     setDark]     = useState(false)
+
+  // Init theme from localStorage
+  useEffect(() => {
+    const stored = localStorage.getItem("theme")
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const isDark = stored ? stored === "dark" : prefersDark
+    setDark(isDark)
+    document.documentElement.classList.toggle("dark", isDark)
+  }, [])
+
+  const toggleTheme = () => {
+    const next = !dark
+    setDark(next)
+    document.documentElement.classList.toggle("dark", next)
+    localStorage.setItem("theme", next ? "dark" : "light")
+  }
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16)
@@ -72,16 +108,33 @@ export default function Navbar() {
 
   return (
     <>
+      <style>{`
+        @keyframes slideIn {
+          from { transform: translateX(100%); opacity: 0; }
+          to   { transform: translateX(0);    opacity: 1; }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+      `}</style>
+
       {/* ── Header ── */}
-      <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-black backdrop-blur-[14px] border-b border-white/[0.06]`}>
+      <header
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300
+          ${scrolled
+            ? "bg-white/90 dark:bg-gray-950/90 backdrop-blur-[14px] border-b border-gray-100 dark:border-white/[0.06] shadow-sm dark:shadow-none"
+            : "bg-white/70 dark:bg-transparent backdrop-blur-[8px] border-b border-transparent"
+          }`}
+      >
         <div className="max-w-6xl px-4 mx-auto h-[60px] flex items-center justify-between gap-6">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0 no-underline">
-            <div className="w-8 h-8 rounded-lg bg-[#869eda] flex items-center justify-center text-[13px] font-extrabold text-black tracking-tight">
+            <div className="w-8 h-8 rounded-lg bg-[#869eda] flex items-center justify-center text-[13px] font-extrabold text-white tracking-tight">
               EO
             </div>
-            <span className="text-sm font-bold text-white tracking-tight whitespace-nowrap">
+            <span className="text-sm font-bold text-gray-900 dark:text-white tracking-tight whitespace-nowrap">
               Emmanuel Oguntolu
             </span>
           </Link>
@@ -99,16 +152,37 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Mobile hamburger */}
-          <button
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            onClick={() => setOpen(s => !s)}
-            className="md:hidden flex items-center justify-center p-1.5 rounded-lg border border-gray-800 text-gray-400 hover:text-gray-200 hover:border-gray-700 transition-all duration-150 flex-shrink-0"
-          >
-            {open ? <CloseIcon /> : <MenuIcon />}
-          </button>
+          {/* Right actions */}
+          <div className="flex items-center gap-2 flex-shrink-0">
+
+            {/* Theme toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="flex items-center justify-center w-8 h-8 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-150"
+            >
+              {dark ? <SunIcon /> : <MoonIcon />}
+            </button>
+
+            {/* Desktop CTA */}
+            <a
+              href="#contact"
+              className="hidden md:flex items-center gap-1.5 text-[12px] font-semibold px-4 py-1.5 rounded-lg bg-[#869eda] hover:bg-[#6f86d6] text-white transition-all duration-150 active:scale-[0.97]"
+            >
+              Hire me
+            </a>
+
+            {/* Mobile hamburger */}
+            <button
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              onClick={() => setOpen(s => !s)}
+              className="md:hidden flex items-center justify-center p-1.5 rounded-lg border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-gray-300 dark:hover:border-gray-700 transition-all duration-150"
+            >
+              {open ? <CloseIcon /> : <MenuIcon />}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -116,7 +190,8 @@ export default function Navbar() {
       {open && (
         <div
           onClick={() => setOpen(false)}
-          className="md:hidden fixed inset-0 z-[110] bg-black/60 backdrop-blur-sm animate-[fadeIn_0.2s_ease_forwards]"
+          className="md:hidden fixed inset-0 z-[110] bg-black/40 dark:bg-black/60 backdrop-blur-sm"
+          style={{ animation: "fadeIn 0.2s ease forwards" }}
         />
       )}
 
@@ -127,20 +202,23 @@ export default function Navbar() {
           role="dialog"
           aria-modal="true"
           aria-label="Navigation menu"
-          className="md:hidden fixed top-0 right-0 bottom-0 z-[120] w-[72%] max-w-[320px] bg-[#080c14] border-l border-gray-800 flex flex-col animate-[slideIn_0.28s_cubic-bezier(0.22,1,0.36,1)_forwards]"
+          className="md:hidden fixed top-0 right-0 bottom-0 z-[120] w-[72%] max-w-[320px] bg-white dark:bg-[#080c14] border-l border-gray-100 dark:border-gray-800 flex flex-col"
+          style={{ animation: "slideIn 0.28s cubic-bezier(0.22,1,0.36,1) forwards" }}
         >
           {/* Sidebar header */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-800">
+          <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800">
             <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-[7px] bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center text-[11px] font-extrabold text-black">
+              <div className="w-7 h-7 rounded-[7px] bg-[#869eda] flex items-center justify-center text-[11px] font-extrabold text-white">
                 EO
               </div>
-              <span className="text-[13px] font-bold text-gray-50">Emmanuel</span>
+              <span className="text-[13px] font-bold text-gray-900 dark:text-gray-50">
+                Emmanuel
+              </span>
             </div>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
-              className="flex items-center justify-center p-1.5 rounded-[7px] bg-[#0f1117] border border-gray-800 text-black hover:text-gray-300 transition-colors"
+              className="flex items-center justify-center p-1.5 rounded-[7px] bg-gray-50 dark:bg-[#0f1117] border border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
             >
               <CloseIcon />
             </button>
@@ -160,40 +238,28 @@ export default function Navbar() {
           </nav>
 
           {/* Sidebar CTAs */}
-          <div className="px-5 py-5 border-t border-gray-800 flex flex-col gap-2.5">
+          <div className="px-5 py-5 border-t border-gray-100 dark:border-gray-800 flex flex-col gap-2.5">
             <a
               href="/cv.pdf"
               download
-              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] border border-gray-800 text-gray-300 hover:bg-gray-800 transition-colors"
+              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               Download Resume
             </a>
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] bg-indigo-600 hover:bg-indigo-700 text-black transition-colors"
+              className="block text-center text-[13px] font-semibold py-2.5 rounded-[9px] bg-[#869eda] hover:bg-[#6f86d6] text-white transition-colors"
             >
               Hire me
             </a>
           </div>
 
-          <div className="px-5 py-3 text-[11px] text-gray-700 text-center">
+          <div className="px-5 py-3 text-[11px] text-gray-400 dark:text-gray-700 text-center">
             © {new Date().getFullYear()} Emmanuel Oguntolu
           </div>
         </aside>
       )}
-
-      {/* Keyframes for animations */}
-      <style>{`
-        @keyframes slideIn {
-          from { transform: translateX(100%); opacity: 0; }
-          to   { transform: translateX(0);    opacity: 1; }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to   { opacity: 1; }
-        }
-      `}</style>
     </>
   )
 }

@@ -209,12 +209,12 @@ function MobileCarousel() {
             {/* Project name + desc — bottom overlay */}
             <div className="absolute bottom-0 left-0 right-0 p-5">
               <h3
-                className="text-black font-bold mb-2 leading-tight"
+                className="text-white font-bold mb-2 leading-tight"
                 style={{ fontSize: "clamp(1.6rem, 7vw, 2.2rem)", letterSpacing: "-0.02em" }}
               >
                 {project.projectName}
               </h3>
-              <p className="text-black/70 text-[13px] leading-relaxed mb-4">
+              <p className="text-white text-[13px] leading-relaxed mb-4">
                 {project.projectDesc}
               </p>
 

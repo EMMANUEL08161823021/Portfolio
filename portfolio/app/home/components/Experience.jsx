@@ -11,8 +11,7 @@ const JOBS = [
     logoText: "text-indigo-300",
     accentColor: "#869eda",
     type: "Internship · Remote · Germany",
-    period: "March 2026",
-    current: true,
+    period: "Nov 2025 - Mar 2026",
     desc: "Pivetra is a modern SaaS platform designed to streamline collaboration, documentation, and customer support for startups and growing teams.",
     achievements: [
       "Migrated the admin UI from Material UI to shadcn/ui, reducing bundle weight and improving responsiveness.",
@@ -31,13 +30,13 @@ const JOBS = [
     accentColor: "#4790f9",
     type: "Contract · Remote",
     period: "2023 — 2024",
-    desc: "Built and maintained a real-time crypto transaction platform with editorial content integration.",
+    desc: "An agency that help tech entrepreneurs & businesses increase their revenue with custom App design, development, social media management & creative content creation.",
     achievements: [
-      "Architected real-time data pipeline handling 10k+ daily transactions using WebSockets.",
-      "Integrated MongoDB with Next.js API routes, achieving sub-100ms average query response.",
-      "Delivered full product from wireframe to production in 6 weeks.",
+      "I developed a role-based-access control system for 4+ businesses.",
+      "I built the user’s authentication system with secure JWT-based login and registration.",
+      "I created a dedicated admin dashboard for managing products (add, update, delete), with route protection to ensure role-based access control.",
     ],
-    stack: ["Next.js", "MongoDB", "WebSockets", "Tailwind CSS", "Node.js"],
+    stack: ["React.js", "MongoDB", "ExpressJs", "Tailwind CSS", "Node.js"],
   },
   {
     id: 3,
@@ -48,7 +47,7 @@ const JOBS = [
     logoText: "text-stone-400",
     accentColor: "#f4f9ff",
     type: "Full-time · Remote · Lekki",
-    period: "Jan 2025",
+    period: "May 2024 - Jan 2025",
     desc: "Rootshive is a digital tool that helps people and businesses manage their money better.",
     achievements: [
       "Created visually appealing and responsive user interfaces for Rootshive's landing pages.",
@@ -73,7 +72,7 @@ const JOBS = [
       "Implemented real-time updates and anomaly detection with alerts sent via email for critical issues.",
       "Integrated React components with backend RESTful APIs for data retrieval and dynamic updates.",
     ],
-    stack: ["React", "Framer Motion", "SCSS", "Git"],
+    stack: ["React", "Framer Motion", "Bootstrap"],
   },
 ]
 
