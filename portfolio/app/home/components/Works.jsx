@@ -10,7 +10,7 @@ const works = [
     category: "Web3 Crypto",
     projectDesc: "PawChain is a hybrid decentralized pet marketplace built on Solana Devnet. Pay for pets using SOL.",
     projectLink: "https://pet-shop-umber-three.vercel.app/",
-    projectStacks: ["Next.js", "Tailwind CSS", "Web.js", "Superbase"],
+    projectStacks: ["Next.js", "Tailwind CSS", "Web.js", "Supabase"],
     color: "#c8bfb0",
     image: "/images/pawchain.jpg",
   },
