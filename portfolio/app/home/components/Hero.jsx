@@ -104,7 +104,7 @@ const Hero = () => {
           <div className="relative float-card">
             <div
               style={{
-                width: 400, height: 400,
+                width: 300, height: 300,
                 borderRadius: "50%",
                 overflow: "hidden",
                 border: "3px solid #1f2937",
