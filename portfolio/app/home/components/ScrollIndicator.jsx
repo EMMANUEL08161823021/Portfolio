@@ -3,6 +3,15 @@ import { useEffect, useState } from "react"
 
 export default function ScrollIndicator() {
   const [progress, setProgress] = useState(0)
+  const [isDark, setIsDark] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsDark(document.documentElement.classList.contains("dark"))
+    check()
+    const observer = new MutationObserver(check)
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] })
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const onScroll = () => {
@@ -14,23 +23,27 @@ export default function ScrollIndicator() {
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
 
-  const size = 72
-  const strokeWidth = 8
-  const radius = (size - strokeWidth) / 2
+  const size         = 72
+  const strokeWidth  = 8
+  const radius       = (size - strokeWidth) / 2
   const circumference = 2 * Math.PI * radius
-  const offset = circumference - (progress / 100) * circumference
+  const offset       = circumference - (progress / 100) * circumference
+
+  const trackColor    = isDark ? "#374151" : "#d1d5db"
+  const progressColor = isDark ? "#869eda" : "#111827"
+  const innerBg       = isDark ? "bg-gray-800" : "bg-gray-900"
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" })
-  const scrollDown = () => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
+  const scrollDown  = () => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
 
   return (
     <div
-      className="fixed bottom-8 right-8 z-50 cursor-pointer group"
+      className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 cursor-pointer group"
       onClick={progress > 5 ? scrollToTop : scrollDown}
       aria-label={progress > 5 ? "Scroll to top" : "Scroll down"}
       role="button"
     >
-      {/* SVG ring — size+10 = 82px total */}
+      {/* SVG ring */}
       <svg
         width={size + 10}
         height={size + 10}
@@ -43,7 +56,7 @@ export default function ScrollIndicator() {
           cy={(size + 10) / 2}
           r={radius}
           fill="none"
-          stroke="#d1d5db"
+          stroke={trackColor}
           strokeWidth={strokeWidth}
           strokeLinecap="round"
         />
@@ -53,7 +66,7 @@ export default function ScrollIndicator() {
           cy={(size + 10) / 2}
           r={radius}
           fill="none"
-          stroke="#111827"
+          stroke={progressColor}
           strokeWidth={strokeWidth}
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -62,8 +75,8 @@ export default function ScrollIndicator() {
         />
       </svg>
 
-      {/* Inner circle — margin=(82-56)/2=13px to stay centered */}
-      <div className="relative z-10 m-[13px] w-14 h-14 rounded-full bg-gray-900 flex items-center justify-center transition-transform duration-200 group-hover:scale-95">
+      {/* Inner circle */}
+      <div className={`relative z-10 m-[13px] w-14 h-14 rounded-full ${innerBg} flex items-center justify-center transition-transform duration-200 group-hover:scale-95`}>
         {progress > 5 ? (
           <svg
             width="18" height="18" viewBox="0 0 24 24"

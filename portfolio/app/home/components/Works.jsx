@@ -237,13 +237,13 @@ function MobileCarousel() {
               </div>
 
               <a
-                href={project.projectLink}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-widest uppercase text-black/50 hover:text-black transition-colors"
-              >
-                Visit site <ExternalIcon />
-              </a>
+               href={project.projectLink}
+               target="_blank"
+               rel="noreferrer"
+               className="inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-widest uppercase text-gray-400 dark:text-white/50 hover:text-gray-900 dark:hover:text-white transition-colors"
+               >
+               Visit site <ExternalIcon />
+               </a>
             </div>
           </motion.div>
         </AnimatePresence>
@@ -317,7 +317,6 @@ function DesktopScroll() {
       ref={containerRef}
       style={{ height: `${works.length * 100}vh` }}
       className="relative hidden md:block"
-      
     >
       <div id="projects" className="sticky max-w-6xl px-4 mx-auto top-0 h-screen flex flex-col justify-center overflow-hidden">
 

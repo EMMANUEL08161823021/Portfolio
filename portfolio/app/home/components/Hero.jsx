@@ -85,7 +85,7 @@ const Hero = () => {
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 text-black transition-all active:scale-[0.97]"
             >
-              See my work
+              See my works
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
