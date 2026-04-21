@@ -2,11 +2,11 @@
 
 const SERVICE_DATA = [
   {
-    id: "web-app",
-    title: "UI/ UX Design",
+    id: "ui-ux",
+    title: "UI / UX Design",
     description:
-      "Fast, accessible, and scalable web applications — from marketing sites to complex admin dashboards. Built with Next.js and optimised for performance from day one.",
-    tags: ["Next.js", "React", "TypeScript"],
+      "Interfaces that feel inevitable — not just functional. I translate ideas and Figma designs into pixel-perfect, accessible experiences with purposeful motion and a strong visual identity.",
+    tags: ["Figma", "Tailwind", "Framer Motion"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -20,15 +20,15 @@ const SERVICE_DATA = [
     tagColor: "bg-indigo-500/10 text-indigo-400 border-indigo-500/20",
   },
   {
-    id: "auth",
-    title: "Front-end Development",
+    id: "frontend",
+    title: "Frontend Development",
     description:
-      "Robust authentication flows using JWT, OAuth 2.0, and session management. Role-based access control and security hardening so your users and data stay safe.",
-    tags: ["JWT", "OAuth", "RBAC"],
+      "Fast, responsive, and production-ready UIs built with Next.js and React. Every component is optimised for performance, accessibility, and the kind of polish users notice without knowing why.",
+    tags: ["Next.js", "React", "TypeScript"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l6 4v4c0 5-3 9-6 11-3-2-6-6-6-11V6l6-4z" />
-        <circle cx="12" cy="11" r="2" />
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
       </svg>
     ),
     accent: "from-emerald-500/10 to-emerald-500/0",
@@ -41,7 +41,7 @@ const SERVICE_DATA = [
     id: "payments",
     title: "Payments & E-commerce",
     description:
-      "End-to-end payment integration with Stripe, Paystack, or Flutterwave. Smooth checkout flows, subscription billing, and webhook handling built to convert.",
+      "Checkout flows that convert — not frustrate. I integrate Stripe, Paystack, and Flutterwave with subscription billing, webhook handling, and a UX that keeps customers moving forward.",
     tags: ["Stripe", "Paystack", "Webhooks"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -58,11 +58,11 @@ const SERVICE_DATA = [
     tagColor: "bg-violet-500/10 text-violet-400 border-violet-500/20",
   },
   {
-    id: "ui",
-    title: "Fullstack Development",
+    id: "fullstack",
+    title: "Full-Stack Development",
     description:
-      "Pixel-perfect, accessible interfaces translated directly from Figma. Micro-interactions, animation, and component systems that make your product feel premium.",
-    tags: ["Figma", "Tailwind", "Framer Motion"],
+      "End-to-end product engineering from database to UI. I own the full stack — architecting systems that are scalable today and maintainable a year from now, without the tech debt.",
+    tags: ["Next.js", "Node.js", "MongoDB"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -79,12 +79,12 @@ const SERVICE_DATA = [
     id: "api",
     title: "API & Backend Development",
     description:
-      "RESTful and GraphQL APIs built with Node.js and Express. Database design with MongoDB or PostgreSQL, third-party integrations, and clean server-side architecture.",
-    tags: ["Node.js", "REST", "MongoDB"],
+      "Clean, documented APIs that your frontend will actually enjoy consuming. RESTful or GraphQL, with MongoDB or PostgreSQL — built for speed, reliability, and easy third-party integration.",
+    tags: ["Node.js", "REST", "GraphQL"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <path d="M12 2l6 4v4c0 5-3 9-6 11-3-2-6-6-6-11V6l6-4z" />
+        <circle cx="12" cy="11" r="2" />
       </svg>
     ),
     accent: "from-amber-500/10 to-amber-500/0",
@@ -94,22 +94,22 @@ const SERVICE_DATA = [
     tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
   },
   {
-    id: "api",
-    title: "API & Backend Development",
+    id: "seo-hosting",
+    title: "SEO & Hosting",
     description:
-      "RESTful and GraphQL APIs built with Node.js and Express. Database design with MongoDB or PostgreSQL, third-party integrations, and clean server-side architecture.",
-    tags: ["Node.js", "REST", "MongoDB"],
+      "A beautiful product no one finds is a product that doesn't exist. I optimise your site for search visibility, Core Web Vitals, and real-world performance — then deploy it on infrastructure that stays fast, secure, and online.",
+    tags: ["Vercel", "Lighthouse", "SEO"],
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <polyline points="16 18 22 12 16 6" />
-        <polyline points="8 6 2 12 8 18" />
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
       </svg>
     ),
-    accent: "from-amber-500/10 to-amber-500/0",
-    iconBg: "bg-amber-500/10",
-    iconColor: "text-amber-400",
-    borderHover: "hover:border-amber-500/40",
-    tagColor: "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    accent: "from-cyan-500/10 to-cyan-500/0",
+    iconBg: "bg-cyan-500/10",
+    iconColor: "text-cyan-400",
+    borderHover: "hover:border-cyan-500/40",
+    tagColor: "bg-cyan-500/10 text-cyan-400 border-cyan-500/20",
   },
 ]
 

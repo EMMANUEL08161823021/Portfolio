@@ -132,7 +132,7 @@ const Hero = () => {
             <div
               className="absolute text-[10px] font-bold px-2.5 py-1 rounded-md tracking-widest uppercase text-indigo-300"
               style={{
-                top: -10, right: -70,
+                top: -10, right: 70,
                 background: "rgba(79,70,229,0.15)",
                 border: "1px solid rgba(79,70,229,0.3)",
               }}
