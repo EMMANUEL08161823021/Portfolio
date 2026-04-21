@@ -131,7 +131,7 @@ function MobileCarousel() {
   };
 
   return (
-    <div id="projects" className="md:hidden flex flex-col bg-white min-h-screen">
+    <div id="works-mobile" className="md:hidden flex flex-col bg-white min-h-screen">
 
       {/* Header */}
       <div className="px-5 pt-10 pb-4">
@@ -318,7 +318,7 @@ function DesktopScroll() {
       style={{ height: `${works.length * 100}vh` }}
       className="relative hidden md:block"
     >
-      <div id="projects" className="sticky max-w-6xl px-4 mx-auto top-0 h-screen flex flex-col justify-center overflow-hidden">
+      <div id="works-desktop" className="sticky max-w-6xl px-4 mx-auto top-0 h-screen flex flex-col justify-center overflow-hidden">
 
         <div className="mb-6">
           <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda] uppercase">
@@ -547,9 +547,9 @@ function DesktopScroll() {
 // ─────────────────────────────────────────
 export default function Works() {
   return (
-    <>
+    <section id="works">
       <MobileCarousel />
       <DesktopScroll />
-    </>
+    </section>
   );
 }

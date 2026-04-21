@@ -67,7 +67,8 @@ const Hero = () => {
           <div className="hero-item">
             <h1 className="text-3xl sm:text-5xl font-extrabold leading-[1.08] tracking-tight text-black dark:text-white">
               Hey,{" "}
-              I'm Emmanuel
+              I'm Emmanuel 
+              <br/>
               <span className="relative inline-block text-[#869eda]">
                 Software Engineer
               </span>
@@ -76,20 +77,24 @@ const Hero = () => {
 
           {/* Bio */}
           <p className="hero-item text-base text-gray-900 dark:text-white leading-relaxed max-w-md font-normal">
-            I'm passionate about building and scaling up businesses using software.
+            I help founders and teams ship faster, look better, and grow further — with software solutions.
           </p>
 
           {/* CTAs */}
           <div className="hero-item flex flex-wrap gap-3">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 text-black transition-all active:scale-[0.97]"
+            <button
+              onClick={() => {
+                const isMobile = window.innerWidth < 768
+                const id = isMobile ? "works-mobile" : "works-desktop"
+                document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+              }}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 text-white transition-all active:scale-[0.97]"
             >
-              See my works
+              See my work
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </a>
+            </button>
           </div>
 
         </div>
@@ -99,7 +104,7 @@ const Hero = () => {
           <div className="relative float-card">
             <div
               style={{
-                width: 300, height: 300,
+                width: 400, height: 400,
                 borderRadius: "50%",
                 overflow: "hidden",
                 border: "3px solid #1f2937",
@@ -110,7 +115,7 @@ const Hero = () => {
               <img
                 src="/images/me.png"
                 alt="Profile"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                style={{ width: "100%", height: "100%", margin:"0 auto", objectFit: "cover" }}
               />
             </div>
 
@@ -132,7 +137,7 @@ const Hero = () => {
             <div
               className="absolute text-[10px] font-bold px-2.5 py-1 rounded-md tracking-widest uppercase text-indigo-300"
               style={{
-                top: -10, right: 70,
+                top: -10, right: 40,
                 background: "rgba(79,70,229,0.15)",
                 border: "1px solid rgba(79,70,229,0.3)",
               }}

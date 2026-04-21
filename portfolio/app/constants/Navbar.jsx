@@ -4,11 +4,11 @@ import React, { useState, useEffect } from "react"
 import Link from "next/link"
 
 const NAV_LINKS = [
-  { label: "Home",     href: "#home" },
+  { label: "Home",     href: "/" },
   { label: "Services", href: "#services" },
   { label: "About",    href: "#about" },
   { label: "Experience",    href: "#experience" },
-  { label: "Works",    href: "#projects" },
+  { label: "Works",    href: "#works" },
   { label: "Contact",  href: "#contact" },
 ]
 
