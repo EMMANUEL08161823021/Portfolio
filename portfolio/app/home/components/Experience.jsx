@@ -94,7 +94,7 @@ export default function Experience() {
 
         {/* Header */}
         <div className="">
-          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda]  dark:text-white uppercase mb-3">
+          <p className="text-[12px] font-extrabold tracking-[0.25em] text-[#869eda]   uppercase mb-3">
             Experience
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-black  dark:text-white leading-tight mb-4">
