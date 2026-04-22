@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const SOCIALS = [
   {
@@ -22,7 +22,7 @@ const SOCIALS = [
   },
   {
     label: "Twitter",
-    href: "https://twitter.com",
+    href: "https://x.com/heuro_dev",
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -69,19 +69,42 @@ const INFO = [
 ]
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" })
-  const [status, setStatus] = useState(null) // "sending" | "success" | "error"
+  const [form, setForm] = useState({ name: "", email: "", services: [], message: "" });
+  const [status, setStatus] = useState(null);
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-
+  useEffect(() => {
+    if (status === "success") {
+      const t = setTimeout(() => setStatus(null), 5000)
+      return () => clearTimeout(t)
+    }
+  }, [status])
   const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus("sending")
-    // Replace with your actual form handler (Resend, EmailJS, Formspree, etc.)
-    await new Promise((r) => setTimeout(r, 1400))
-    setStatus("success")
-    setForm({ name: "", email: "", subject: "", message: "" })
+
+    try {
+      const res = await fetch("https://formspree.io/f/mdaypwnd", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          services: form.services.join(", "),
+          message: form.message,
+        }),
+      })
+
+      if (res.ok) {
+        setStatus("success")
+        setForm({ name: "", email: "", services: [], message: "" })
+      } else {
+        setStatus("error")
+      }
+    } catch {
+      setStatus("error")
+    }
   }
 
   return (
@@ -129,7 +152,7 @@ export default function Contact() {
             <span className="text-[#869eda]"> together</span>
           </h2>
           <p className="text-[15px] text-gray-900 leading-relaxed max-w-md">
-            Have a project in mind or just want to say hi? My inbox is always open.
+            Have a project in mind? My inbox is always open.
           </p>
         </div>
 
@@ -172,19 +195,52 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Subject */}
-              <div className="flex flex-col gap-1.5">
-                <label className="text-[11px] text-gray-900 uppercase  font-medium">
-                  Subject
-                </label>
-                <input
-                  name="subject"
-                  value={form.subject}
-                  onChange={handleChange}
-                  required
-                  placeholder="Project enquiry / Just saying hi"
-                  className="field"
-                />
+              {/* Services — multi-select */}
+              <div className="flex flex-col gap-3">
+                <div>
+                  <label className="text-[11px] text-gray-900 uppercase tracking-widest font-medium">
+                    Which service are you interested in?
+                  </label>
+                  <p className="text-[11px] text-gray-400 mt-0.5">
+                    Select all that apply
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {[
+                    "UI / UX Design",
+                    "Frontend Development",
+                    "Full-Stack Development",
+                    "API & Backend",
+                    "Payments & E-commerce",
+                    "SEO & Hosting",
+                  ].map((service) => {
+                    const selected = form.services?.includes(service)
+                    return (
+                      <button
+                        key={service}
+                        type="button"
+                        onClick={() => {
+                          const current = form.services || []
+                          const updated = current.includes(service)
+                            ? current.filter((s) => s !== service)
+                            : [...current, service]
+                          setForm((prev) => ({ ...prev, services: updated }))
+                        }}
+                        className={`px-3 py-2.5 rounded-lg text-[12px] font-medium border field bg-[#869eda] text-left transition-all duration-150 ${
+                          selected
+                            ? "bg-[#869eda]/15 border-[#869eda] text-[#869eda]"
+                            : "bg-transparent border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-400 hover:border-[#869eda]/50 hover:text-[#869eda]"
+                        }`}
+                      >
+                        {selected && (
+                          <span className="mr-1.5 text-[10px]">✓</span>
+                        )}
+                        {service}
+                      </button>
+                    )
+                  })}
+                </div>
               </div>
 
               {/* Message */}
@@ -219,7 +275,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-1 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-black transition-all active:scale-[0.98]"
+                className="mt-1 w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold bg-[#869eda] hover:bg-[#506ba3] disabled:opacity-60 disabled:cursor-not-allowed text-black transition-all active:scale-[0.98]"
               >
                 {status === "sending" ? (
                   <>
