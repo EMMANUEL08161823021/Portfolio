@@ -9,7 +9,7 @@ export const metadata = {
   description: "A portfolio that showcases Emmanuel Oguntolu",
   openGraph: {
     title: "Emmanuel Oguntolu — Software Engineer",
-    description: "Software engineer building fast, beautiful web products.",
+    description: "A Software Engineer help founders and teams ship faster, look better, and grow further — with software solutions",
     url: "https://oguntolu-emmanuel.com",
     images: [{ url: "/images/me-2.jpeg" }],
   },

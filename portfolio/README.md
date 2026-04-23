@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Emmanuel Oguntolu — Portfolio
 
-## Getting Started
+> A Software Engineer help founders and teams ship faster, look better, and grow further — with software solutions.
 
-First, run the development server:
+🌐 **Live Site:** [oguntolu-emmanuel.com](https://oguntolu-emmanuel.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Next.js 15 (App Router) |
+| Styling | Tailwind CSS |
+| Animations | Framer Motion |
+| Font | DM Sans |
+| Forms | Formspree |
+| Analytics | Vercel Analytics |
+| Deployment | Vercel |
+
+---
+
+## Features
+
+- ⚡ **Blazing fast** — optimised with Next.js App Router, static generation, and Vercel edge network
+- 🌗 **Dark / Light mode** — system preference aware with manual toggle
+- 📱 **Fully responsive** — mobile-first design with a dedicated mobile carousel for projects
+- 🎯 **Scroll indicator** — circular progress ring tracking page scroll position
+- 📬 **Contact form** — Formspree-powered with service selection and auto-dismiss success state
+- 🎨 **Animated tech stack** — dual marquee rows with brand colour hover effects
+- 🔢 **Scroll-driven works section** — sticky scroll with per-project transitions on desktop, swipeable carousel on mobile
+
+---
+
+## Sections
+
+- **Hero** — animated role cycler, live terminal block, stats
+- **About** — bio, fact strip, animated tech stack marquee
+- **Services** — six service cards with accent colours
+- **Experience** — card-based timeline with expandable achievements
+- **Works** — scroll-driven split panel (desktop) + swipeable carousel (mobile)
+- **Contact** — multi-select service picker, glassy input fields, Formspree integration
+
+---
+
+## Projects Showcased
+
+| Project | Category | Stack |
+|---------|----------|-------|
+| SPACES | Film & Web | Next.js, Tailwind, Framer Motion |
+| SaaSto | Productivity | Next.js, Tailwind, Framer Motion |
+| NeuroWallet | Accessibility · FinTech | Next.js, Tailwind, Express.js |
+| LYNKK | Crypto · Media | Next.js, Tailwind, MongoDB |
+| ENERGYM | Health & Fitness | React, Tailwind |
+| Vault | Web3 · Protocol | React, Framer Motion |
+
+---
+
+
+## Project Structure
+
+```
+portfolio/
+├── app/
+│   ├── fonts/              # DM Sans font files
+│   ├── constants/          # Navbar, Footer
+│   ├── components/         # ScrollIndicator, etc.
+│   ├── context/            # ScrollContext
+│   ├── home/               # Page sections
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Works.jsx
+│   │   └── Contact.jsx
+│   ├── globals.css
+│   ├── layout.jsx
+│   └── page.jsx
+├── public/
+│   └── images/             # Project screenshots
+├── tailwind.config.js
+└── package.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+No environment variables required. Formspree endpoint is set directly in the contact form.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deployed on **Vercel** with automatic deployments on push to `main`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Deploy manually via Vercel CLI
+vercel --prod
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Emmanuel Oguntolu**
+- 🌐 [oguntolu-emmanuel.com](https://oguntolu-emmanuel.com)
+- 💼 [LinkedIn](https://linkedin.com/in/emmanuel-oguntolu)
+- 🐙 [GitHub](https://github.com/EMMANUEL08161823021)
+- 🐦 [Twitter](https://x.com/heuro_dev)
+
+---
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).

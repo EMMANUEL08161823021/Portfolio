@@ -39,7 +39,7 @@ const works = [
     projectName: "NeuroWallet",
     category: "Accessibility · FinTech",
     projectDesc: "A secure, accessible, and inclusive digital wallet built for people with physical disabilities.",
-    projectLink: "https://neurowallet.vercel.app",
+    projectLink: "https://neuro-wallet.vercel.app",
     projectStacks: ["Next.js", "Tailwind CSS", "Express.js"],
     color: "#b8c8b0",
     image: null,
