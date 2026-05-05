@@ -4,8 +4,18 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import Image from "next/image";
 
 const works = [
-  {
+    {
     id: 0,
+    projectName: "TID",
+    category: "Energy Conference",
+    projectDesc: "The Industry Discourse is a student-led energy conference that brings young people across the African continent to gain knowledge about the energy ecosystem.  ",
+    projectLink: "https://theindustrydiscourse.com",
+    projectStacks: ["Next.js", "Tailwind CSS", "Supabase"],
+    color: "#000",
+    image: "/images/tid-white.png",
+  },
+  {
+    id: 1,
     projectName: "PawChain",
     category: "Web3 Crypto",
     projectDesc: "PawChain is a hybrid decentralized pet marketplace built on Solana Devnet. Pay for pets using SOL.",
@@ -15,7 +25,7 @@ const works = [
     image: "/images/pawchain.jpg",
   },
   {
-    id: 1,
+    id: 2,
     projectName: "SPACES",
     category: "Film & Web",
     projectDesc: "A visually ambitious feature film landing — a story about creators and an infinite canvas that changes their lives.",
@@ -25,7 +35,7 @@ const works = [
     image: "/images/spaces.jpeg",
   },
   {
-    id: 2,
+    id: 3,
     projectName: "SaaSto",
     category: "Productivity",
     projectDesc: "A collaboration time-tracking platform designed for modern teams. Streamlines how distributed teams log and review work.",
@@ -35,7 +45,7 @@ const works = [
     image: "/images/saasto.svg",
   },
   {
-    id: 3,
+    id: 4,
     projectName: "NeuroWallet",
     category: "Accessibility · FinTech",
     projectDesc: "A secure, accessible, and inclusive digital wallet built for people with physical disabilities.",
@@ -45,7 +55,7 @@ const works = [
     image: null,
   },
   {
-    id: 4,
+    id: 5,
     projectName: "LYNKK",
     category: "Crypto · Media",
     projectDesc: "A real-time crypto transaction dashboard with integrated editorial content and MongoDB-backed data management.",
@@ -53,16 +63,6 @@ const works = [
     projectStacks: ["Next.js", "Tailwind CSS", "MongoDB"],
     color: "#c8c0b0",
     image: "/images/lynkklogo.svg",
-  },
-  {
-    id: 5,
-    projectName: "ENERGYM",
-    category: "Health & Fitness",
-    projectDesc: "A fitness solution offering workout plans, class scheduling, progress tracking, and trainer connections.",
-    projectLink: "https://energymfitnessio.netlify.app",
-    projectStacks: ["React", "Tailwind CSS"],
-    color: "#c0b0c8",
-    image: null,
   },
   {
     id: 6,
