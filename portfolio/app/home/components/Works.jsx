@@ -197,10 +197,10 @@ function MobileCarousel() {
               <span
                 className="text-[10px] font-medium tracking-[0.18em] uppercase px-2.5 py-1 rounded-full"
                 style={{
-                  background: "rgba(255,255,255,0.15)",
+                  background: "rgba(0,0,0,0.06)",
                   backdropFilter: "blur(8px)",
-                  color: "rgba(255,255,255,0.85)",
-                  border: "1px solid rgba(255,255,255,0.12)",
+                  color: "rgba(0,0,0,0.55)",
+                  border: "1px solid rgba(0,0,0,0.1)",
                 }}
               >
                 {project.category}
