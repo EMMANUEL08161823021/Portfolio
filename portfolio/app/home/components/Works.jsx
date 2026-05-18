@@ -10,7 +10,7 @@ const works = [
     projectName: "TravelBeta",
     category: "Affiliate System",
     projectDesc: "A full-stack affiliate platform for Nigeria's leading travel OTA, built on Next.js 14 with commission tracking, Paystack payouts, and a Starter-to-Platinum tier engine.",
-    projectLink: "https://travel-beta-affiliate.vercel.app/",
+    projectLink: "#",
     projectStacks: ["NextJs", "Framer Motion", "Typescript"],
     color: "#ff018",
     image: "/images/travelBeta.svg",
