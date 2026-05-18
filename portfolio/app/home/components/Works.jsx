@@ -4,8 +4,19 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import Image from "next/image";
 
 const works = [
+
+  {
+    id: 6,
+    projectName: "TravelBeta",
+    category: "Affiliate System",
+    projectDesc: "A full-stack affiliate platform for Nigeria's leading travel OTA, built on Next.js 14 with commission tracking, Paystack payouts, and a Starter-to-Platinum tier engine.",
+    projectLink: "https://travel-beta-affiliate.vercel.app/",
+    projectStacks: ["NextJs", "Framer Motion", "Typescript"],
+    color: "#ff018",
+    image: "/images/travelBeta.svg",
+  },
     {
-    id: 0,
+    id: 5,
     projectName: "TID",
     category: "Energy Conference",
     projectDesc: "The Industry Discourse is a student-led energy conference that brings young people across the African continent to gain knowledge about the energy ecosystem.  ",
@@ -15,7 +26,7 @@ const works = [
     image: "/images/tid-white.png",
   },
   {
-    id: 1,
+    id: 4,
     projectName: "PawChain",
     category: "Web3 Crypto",
     projectDesc: "PawChain is a hybrid decentralized pet marketplace built on Solana Devnet. Pay for pets using SOL.",
@@ -25,7 +36,7 @@ const works = [
     image: "/images/pawchain.jpg",
   },
   {
-    id: 2,
+    id: 3,
     projectName: "SPACES",
     category: "Film & Web",
     projectDesc: "A visually ambitious feature film landing — a story about creators and an infinite canvas that changes their lives.",
@@ -35,7 +46,7 @@ const works = [
     image: "/images/spaces.jpeg",
   },
   {
-    id: 3,
+    id: 2,
     projectName: "SaaSto",
     category: "Productivity",
     projectDesc: "A collaboration time-tracking platform designed for modern teams. Streamlines how distributed teams log and review work.",
@@ -45,7 +56,7 @@ const works = [
     image: "/images/saasto.svg",
   },
   {
-    id: 4,
+    id: 1,
     projectName: "NeuroWallet",
     category: "Accessibility · FinTech",
     projectDesc: "A secure, accessible, and inclusive digital wallet built for people with physical disabilities.",
@@ -55,7 +66,7 @@ const works = [
     image: null,
   },
   {
-    id: 5,
+    id: 0,
     projectName: "LYNKK",
     category: "Crypto · Media",
     projectDesc: "A real-time crypto transaction dashboard with integrated editorial content and MongoDB-backed data management.",
@@ -63,16 +74,6 @@ const works = [
     projectStacks: ["Next.js", "Tailwind CSS", "MongoDB"],
     color: "#c8c0b0",
     image: "/images/lynkklogo.svg",
-  },
-  {
-    id: 6,
-    projectName: "Vault",
-    category: "Web3 · Protocol",
-    projectDesc: "A decentralized protocol for resolving wallet-syncing issues, enabling remote resolutions for noncustodial wallets.",
-    projectLink: "https://vault-airdrop.netlify.app",
-    projectStacks: ["React", "Framer Motion"],
-    color: "#b0c4c8",
-    image: null,
   },
 ];
 
