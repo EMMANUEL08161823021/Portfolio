@@ -197,10 +197,10 @@ function MobileCarousel() {
               <span
                 className="text-[10px] font-medium tracking-[0.18em] uppercase px-2.5 py-1 rounded-full"
                 style={{
-                  background: "rgba(0,0,0,0.06)",
+                  background: "rgba(255,255,255,0.15)",
                   backdropFilter: "blur(8px)",
-                  color: "rgba(0,0,0,0.55)",
-                  border: "1px solid rgba(0,0,0,0.1)",
+                  color: project.color === "#ff018" ? "#000000" : "rgba(255,255,255,0.85)",
+                  border: "1px solid rgba(255,255,255,0.12)",
                 }}
               >
                 {project.category}
@@ -452,7 +452,7 @@ function DesktopScroll() {
                   fontSize: 10,
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.6)",
+                  color: selected.color === "#ff018" ? "#000000" : "rgba(255,255,255,0.85)",
                   fontWeight: 500,
                 }}
               >
