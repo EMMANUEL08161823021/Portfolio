@@ -4,19 +4,8 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import Image from "next/image";
 
 const works = [
-
   {
     id: 6,
-    projectName: "TravelBeta",
-    category: "Affiliate System",
-    projectDesc: "A full-stack affiliate platform for Nigeria's leading travel OTA, built on Next.js 14 with commission tracking, Paystack payouts, and a Starter-to-Platinum tier engine.",
-    projectLink: "https://travel-beta-affiliate.vercel.app/",
-    projectStacks: ["NextJs", "Framer Motion", "Typescript"],
-    color: "#ff018",
-    image: "/images/travelBeta.svg",
-  },
-  {
-    id: 5,
     projectName: "Tixseller",
     category: "Event Discovery",
     projectDesc: "Discover and book tickets for concerts, parties, conferences and more. Create and sell event tickets with ease on Tixseller.",
@@ -25,6 +14,18 @@ const works = [
     color: "#b8c8b0",
     image: "/images/tixseller.jpg",
   },
+
+  {
+    id: 5,
+    projectName: "TravelBeta",
+    category: "Affiliate System",
+    projectDesc: "A full-stack affiliate platform for Nigeria's leading travel OTA, built on Next.js 14 with commission tracking, Paystack payouts, and a Starter-to-Platinum tier engine.",
+    projectLink: "https://travel-beta-affiliate.vercel.app/",
+    projectStacks: ["NextJs", "Framer Motion", "Typescript"],
+    color: "#ff018",
+    image: "/images/travelBeta.svg",
+  },
+
   {
     id: 4,
     projectName: "TID",
