@@ -15,8 +15,18 @@ const works = [
     color: "#ff018",
     image: "/images/travelBeta.svg",
   },
-    {
+  {
     id: 5,
+    projectName: "Tixseller",
+    category: "Event Discovery",
+    projectDesc: "Discover and book tickets for concerts, parties, conferences and more. Create and sell event tickets with ease on Tixseller.",
+    projectLink: "https://tixseller.africa",
+    projectStacks: ["Next.js", "Typescript", "NodeJs"],
+    color: "#b8c8b0",
+    image: "/images/tixseller.jpg",
+  },
+  {
+    id: 4,
     projectName: "TID",
     category: "Energy Conference",
     projectDesc: "The Industry Discourse is a student-led energy conference that brings young people across the African continent to gain knowledge about the energy ecosystem.  ",
@@ -26,7 +36,7 @@ const works = [
     image: "/images/tid-white.png",
   },
   {
-    id: 4,
+    id: 3,
     projectName: "PawChain",
     category: "Web3 Crypto",
     projectDesc: "PawChain is a hybrid decentralized pet marketplace built on Solana Devnet. Pay for pets using SOL.",
@@ -36,7 +46,7 @@ const works = [
     image: "/images/pawchain.jpg",
   },
   {
-    id: 3,
+    id: 2,
     projectName: "SPACES",
     category: "Film & Web",
     projectDesc: "A visually ambitious feature film landing — a story about creators and an infinite canvas that changes their lives.",
@@ -46,7 +56,7 @@ const works = [
     image: "/images/spaces.jpeg",
   },
   {
-    id: 2,
+    id: 1,
     projectName: "SaaSto",
     category: "Productivity",
     projectDesc: "A collaboration time-tracking platform designed for modern teams. Streamlines how distributed teams log and review work.",
@@ -54,16 +64,6 @@ const works = [
     projectStacks: ["Next.js", "Tailwind CSS", "Framer Motion"],
     color: "#b0bfc8",
     image: "/images/saasto.svg",
-  },
-  {
-    id: 1,
-    projectName: "NeuroWallet",
-    category: "Accessibility · FinTech",
-    projectDesc: "A secure, accessible, and inclusive digital wallet built for people with physical disabilities.",
-    projectLink: "https://neuro-wallet.vercel.app",
-    projectStacks: ["Next.js", "Tailwind CSS", "Express.js"],
-    color: "#b8c8b0",
-    image: null,
   },
   {
     id: 0,
