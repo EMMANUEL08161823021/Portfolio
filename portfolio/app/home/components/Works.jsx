@@ -383,7 +383,7 @@ function DesktopScroll() {
                     color: active === i ? "#1a1a18" : "#b5b2ab",
                   }}
                 >
-                  {project.projectName}
+                  {/* {project.projectName} */}
                 </button>
               ))}
             </div>
